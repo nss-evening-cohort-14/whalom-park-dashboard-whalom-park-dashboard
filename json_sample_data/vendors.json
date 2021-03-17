@@ -1,0 +1,82 @@
+{
+  "-MVsScuJ2ANljkeRe2pn" : {
+    "staffID_firebaseKey" : "-MVsSCUnpcvsuC__YR3A",
+    "vendorID_firebaseKey" : "-MVsScuJ2ANljkeRe2pn",
+    "vendorImageURL" : "http://www.cokatocorncarnival.com/wp-content/uploads/2018/04/vendors.jpg",
+    "vendorIsActive" : true,
+    "vendorName" : "Dogs and Fries LLC",
+    "vendorProduct" : "External Supplier"
+  },
+  "-MVsScuKTv1tecAdUwna" : {
+    "staffID_firebaseKey" : "-MVsSCUpqTQitM38mQA1",
+    "vendorID_firebaseKey" : "-MVsScuKTv1tecAdUwna",
+    "vendorImageURL" : "https://photos.smugmug.com/Portfolio/Austin-Gallery/i-Zw7mWH8/4/53ea34fe/L/austin-rodeo-carnival-food-vendors-L.jpg",
+    "vendorIsActive" : true,
+    "vendorName" : "Pizza and Burgers Co",
+    "vendorProduct" : "Remy Red Berry Infusion"
+  },
+  "-MVsScuLUktQRc2WHpsG" : {
+    "staffID_firebaseKey" : "-MVsSCUqJ29fIS7bXDEU",
+    "vendorID_firebaseKey" : "-MVsScuLUktQRc2WHpsG",
+    "vendorImageURL" : "https://bloximages.newyork1.vip.townnews.com/loganbanner.com/content/tncms/assets/v3/editorial/d/3d/d3d2785e-9958-11e9-8fd7-4385ffcaaea1/5d15902025c0b.image.jpg?resize=1200%2C800",
+    "vendorIsActive" : false,
+    "vendorName" : "Cotton Candyland",
+    "vendorProduct" : "Cheese - Perron Cheddar"
+  },
+  "-MVsScuMrjXHv_YoXrM6" : {
+    "staffID_firebaseKey" : "-MVsSCUskf1kRs8EDV9m",
+    "vendorID_firebaseKey" : "-MVsScuMrjXHv_YoXrM6",
+    "vendorImageURL" : "https://www.briarfest.com/images/food-vendor-300.jpg",
+    "vendorIsActive" : true,
+    "vendorName" : "Popcorn Town",
+    "vendorProduct" : "Ecolab - Power Fusion"
+  },
+  "-MVsScuNrXhlHEH2d1JZ" : {
+    "staffID_firebaseKey" : "-MVsSCUtYpgGQCnfFiDI",
+    "vendorID_firebaseKey" : "-MVsScuNrXhlHEH2d1JZ",
+    "vendorImageURL" : "http://www.dodgecountyfairgrounds.com/wp-content/uploads/2013/03/slush-factory-fair-food-vendor.jpg",
+    "vendorIsActive" : false,
+    "vendorName" : "Slushie World",
+    "vendorProduct" : "Ice Cream - Fudge Bars"
+  },
+  "-MVsScuOFVpaOQFVC4NI" : {
+    "staffID_firebaseKey" : "-MVsSCUv68swhTt98xCz",
+    "vendorID_firebaseKey" : "-MVsScuOFVpaOQFVC4NI",
+    "vendorImageURL" : "https://thumbs.dreamstime.com/b/variety-carnival-food-vendors-coquitlam-bc-canada-april-coquitlam-bc-canada-39859399.jpg",
+    "vendorIsActive" : true,
+    "vendorName" : "King Poutine",
+    "vendorProduct" : "Nut - Chestnuts, Whole"
+  },
+  "-MVsScuPxeUHBy5rwfMa" : {
+    "staffID_firebaseKey" : "-MVsSCUwlEJ49SZcupj6",
+    "vendorID_firebaseKey" : "-MVsScuPxeUHBy5rwfMa",
+    "vendorImageURL" : "http://www.armstrongshows.com/food/corndog.jpg",
+    "vendorIsActive" : false,
+    "vendorName" : "Born to Corn Dog",
+    "vendorProduct" : "Scotch - Queen Anne"
+  },
+  "-MVsScuQ42g4NOT3F526" : {
+    "staffID_firebaseKey" : "-MVsSCUxC0HBDpDQ6ZAV",
+    "vendorID_firebaseKey" : "-MVsScuQ42g4NOT3F526",
+    "vendorImageURL" : "https://previews.123rf.com/images/asiastock/asiastock1801/asiastock180100073/94278135-taipei-taiwan-may-20-street-food-vendors-in-the-famous-shilin-night-market-a-popular-travel-destinat.jpg",
+    "vendorIsActive" : false,
+    "vendorName" : "Wok The Wok",
+    "vendorProduct" : "Iced Tea Concentrate"
+  },
+  "-MVsScuRQ2PcBOBiJLX5" : {
+    "staffID_firebaseKey" : "-MVsSCUzbcwpfRl-khpD",
+    "vendorID_firebaseKey" : "-MVsScuRQ2PcBOBiJLX5",
+    "vendorImageURL" : "https://cdn.winsightmedia.com/platform/files/public/2019-08/background/BigIdea-FoodTrucks_1567012134.jpg?OfywLGIwsXh_Js8HBLe_Brl4n01sMJdV",
+    "vendorIsActive" : false,
+    "vendorName" : "Food Truck Alley",
+    "vendorProduct" : "Pork - Suckling Pig"
+  },
+  "-MVsScuSrSShdS1V1YDF" : {
+    "staffID_firebaseKey" : "-MVsSCV-i7KCbsP5UqM5",
+    "vendorID_firebaseKey" : "-MVsScuSrSShdS1V1YDF",
+    "vendorImageURL" : "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2018/12/mcdonalds-drive-through-restaurant.jpg?fit=1200%2C879&ssl=1 ",
+    "vendorIsActive" : false,
+    "vendorName" : "DocManalds",
+    "vendorProduct" : "Juice - Orange, Concentrate"
+  }
+}
