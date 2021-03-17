@@ -5,5 +5,14 @@ body {
   background-color: antiquewhite;
   color: brown;
   text-align: center;
-  margin-top: 100px;
+}
+
+.navbar-dark .navbar-brand {
+  max-width: 2%;
+  max-height: 2%;
+}
+
+
+#logout-button, #login-button {
+  margin-left: auto;
 }
