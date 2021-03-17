@@ -1,6 +1,11 @@
 import 'firebase/auth';
 import createRideForm from '../components/forms/rideForms/createRideForm';
-import { addRides, getSingleRide, updateRides } from '../helpers/data/rideData/ridesData';
+import {
+  addRides,
+  getSingleRide,
+  updateRides,
+  deleteRides
+} from '../helpers/data/rideData/ridesData';
 import createRides from '../components/cards/rides';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
@@ -20,6 +25,12 @@ const domEvents = () => {
         rideImageURL: document.querySelector('#image').value,
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
+    }
+
+    // Delete Ride
+    if (e.target.id.includes('delete-ride')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteRides(firebaseKey).then((ridesArray) => createRides(ridesArray));
     }
 
     // CLICK EVENT FOR SHOWING MODAL TO EDIT RIDE

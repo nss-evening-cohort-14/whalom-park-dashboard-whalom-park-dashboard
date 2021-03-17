@@ -29,6 +29,13 @@ const addRides = (ridesObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+// DELETE Rides
+const deleteRides = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/Rides/${firebaseKey}.json`)
+    .then(() => getRides().then((ridesArray) => resolve(ridesArray)))
+    .catch((error) => reject(error));
+});
+
 // UPDATE RIDES
 const updateRides = (firebaseKey, ridesObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/Rides/${firebaseKey}.json`, ridesObject)
@@ -37,5 +44,5 @@ const updateRides = (firebaseKey, ridesObject) => new Promise((resolve, reject) 
 });
 
 export {
-  getRides, addRides, getSingleRide, updateRides
+  getRides, addRides, getSingleRide, updateRides, deleteRides
 };
