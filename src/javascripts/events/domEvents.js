@@ -1,6 +1,6 @@
 import 'firebase/auth';
 import createRideForm from '../components/forms/rideForms/createRideForm';
-import { addRides } from '../helpers/data/vendorData/ridesData';
+import { addRides, deleteRides } from '../helpers/data/vendorData/ridesData';
 import createRides from '../components/cards/rides';
 
 const domEvents = () => {
@@ -18,6 +18,12 @@ const domEvents = () => {
         rideImageURL: document.querySelector('#image').value,
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
+    }
+
+    // Delete Ride
+    if (e.target.id.includes('delete-ride')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteRides(firebaseKey).then((ridesArray) => createRides(ridesArray));
     }
   });
 };

@@ -22,4 +22,11 @@ const addRides = (ridesObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getRides, addRides };
+// DELETE Rides
+const deleteRides = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/Rides/${firebaseKey}.json`)
+    .then(() => getRides().then((ridesArray) => resolve(ridesArray)))
+    .catch((error) => reject(error));
+});
+
+export { getRides, addRides, deleteRides };
