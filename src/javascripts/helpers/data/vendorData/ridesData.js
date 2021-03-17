@@ -3,11 +3,23 @@ import firebaseConfig from '../../auth/apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-// GET BOARDS
+// GET Rides
 const getRides = () => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/Rides.json`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
-export default getRides;
+// Add Rides
+const addRides = (ridesObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/Rides.json`, ridesObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/Rides/${response.data.name}.json`, body)
+        .then(() => {
+          getRides().then((ridesArray) => resolve(ridesArray));
+        });
+    }).catch((error) => reject(error));
+});
+
+export { getRides, addRides };

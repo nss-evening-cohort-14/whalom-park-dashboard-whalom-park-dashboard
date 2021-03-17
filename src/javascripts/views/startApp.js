@@ -4,7 +4,7 @@ import domBuilder from '../components/domBuilder';
 import navBar from '../components/navBar';
 import domEvents from '../events/domEvents';
 import navigationEvents from '../events/navigationEvents';
-import getRides from '../helpers/data/vendorData/ridesData';
+import { getRides } from '../helpers/data/vendorData/ridesData';
 
 const startApp = (userObject) => {
   domBuilder();
