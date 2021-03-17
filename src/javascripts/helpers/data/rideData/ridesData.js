@@ -10,6 +10,13 @@ const getRides = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// GET SINGLE RIDES
+const getSingleRide = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/Rides/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
 // Add Rides
 const addRides = (ridesObject) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/Rides.json`, ridesObject)
@@ -22,4 +29,13 @@ const addRides = (ridesObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getRides, addRides };
+// UPDATE RIDES
+const updateRides = (firebaseKey, ridesObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/Rides/${firebaseKey}.json`, ridesObject)
+    .then(() => getRides()).then((ridesArray) => resolve(ridesArray))
+    .catch((error) => reject(error));
+});
+
+export {
+  getRides, addRides, getSingleRide, updateRides
+};

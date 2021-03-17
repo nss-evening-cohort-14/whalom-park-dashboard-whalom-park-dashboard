@@ -1,7 +1,7 @@
 import 'firebase/auth';
 import createRides from '../components/cards/rides';
 import signOut from '../helpers/auth/signOut';
-import { getRides } from '../helpers/data/vendorData/ridesData';
+import { getRides } from '../helpers/data/rideData/ridesData';
 
 const navigationEvents = () => {
   // click event to show rides

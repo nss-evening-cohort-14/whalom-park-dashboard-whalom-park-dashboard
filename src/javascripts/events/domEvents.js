@@ -1,11 +1,13 @@
 import 'firebase/auth';
 import createRideForm from '../components/forms/rideForms/createRideForm';
-import { addRides } from '../helpers/data/vendorData/ridesData';
+import { addRides, getSingleRide, updateRides } from '../helpers/data/rideData/ridesData';
 import createRides from '../components/cards/rides';
+import formModal from '../components/forms/formModal';
+import editRideForm from '../components/forms/rideForms/editRideForm';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
-    // CLICK EVENT FOR ADDING Ride FORM
+    // CLICK EVENT FOR ADDING RIDE FORM
     if (e.target.id.includes('add-ride-btn')) {
       createRideForm();
     }
@@ -18,6 +20,26 @@ const domEvents = () => {
         rideImageURL: document.querySelector('#image').value,
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
+    }
+
+    // CLICK EVENT FOR SHOWING MODAL TO EDIT RIDE
+    if (e.target.id.includes('edit-ride')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Pin');
+      getSingleRide(firebaseKey).then((rideObject) => editRideForm(rideObject));
+    }
+
+    // // CLICK EVENT FOR EDITING PIN
+    if (e.target.id.includes('update-ride')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const ridesObject = {
+        rideName: document.querySelector('#title').value,
+        rideImageURL: document.querySelector('#image').value,
+      };
+      updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
+
+      $('#formModal').modal('toggle');
     }
   });
 };
