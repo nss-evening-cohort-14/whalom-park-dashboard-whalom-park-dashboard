@@ -23,6 +23,7 @@ const domEvents = () => {
       const rideObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
+        rideID_firebaseKey: document.querySelector('#staff')
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
@@ -40,7 +41,7 @@ const domEvents = () => {
       getSingleRide(firebaseKey).then((rideObject) => editRideForm(rideObject));
     }
 
-    // // CLICK EVENT FOR EDITING PIN
+    // // CLICK EVENT FOR EDITING Ride
     if (e.target.id.includes('update-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
       e.preventDefault();
