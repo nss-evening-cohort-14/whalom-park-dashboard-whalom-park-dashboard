@@ -14,11 +14,11 @@ const startApp = (userObject) => {
   domEvents();
   navigationEvents();
 
-  getVendors().then((vendorArray) => {
+  getVendors(userObject).then((vendorArray) => {
     if (vendorArray.length) {
       renderVendors(vendorArray);
     } else {
-      emptyVendors();
+      emptyVendors(userObject);
     }
   });
   logoutButton();

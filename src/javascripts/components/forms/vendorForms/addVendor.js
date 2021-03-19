@@ -15,7 +15,7 @@ const addVendorForm = () => {
         <label for="product">Product</label>
         <input type="text" class="form-control" id="product" placeholder="Vendor Product" required>
       </div>
-      <div class="form-group" id="select-vendor">
+      <div class="form-group" id="select-staff">
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="active">
