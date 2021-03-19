@@ -1,10 +1,7 @@
 import 'firebase/auth';
 import createRideForm from '../components/forms/rideForms/createRideForm';
 import {
-  addRides,
-  getSingleRide,
-  updateRides,
-  deleteRides
+  addRides, getSingleRide, updateRides, deleteRides
 } from '../helpers/data/rideData/ridesData';
 import createRides from '../components/cards/rides';
 import formModal from '../components/forms/formModal';
@@ -23,7 +20,7 @@ const domEvents = () => {
       const rideObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        rideID_firebaseKey: document.querySelector('#staff')
+        staffID_firebaseKey: 'Mitchell'
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
@@ -44,10 +41,12 @@ const domEvents = () => {
     // // CLICK EVENT FOR EDITING Ride
     if (e.target.id.includes('update-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
+      console.warn(firebaseKey);
       e.preventDefault();
       const ridesObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
+        // staffID_firebaseKey: document.querySelector('#staff')
       };
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 

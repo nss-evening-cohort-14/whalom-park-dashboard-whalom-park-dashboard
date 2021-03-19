@@ -21,10 +21,7 @@ const getSingleRide = (firebaseKey) => new Promise((resolve, reject) => {
 const addRides = (ridesObject) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/Rides.json`, ridesObject)
     .then((response) => {
-      const body = {
-        rideID_firebaseKey: response.data.name,
-        staffID_firebaseKey: response.data.name
-      };
+      const body = { rideID_firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/Rides/${response.data.name}.json`, body)
         .then(() => {
           getRides().then((ridesArray) => resolve(ridesArray));

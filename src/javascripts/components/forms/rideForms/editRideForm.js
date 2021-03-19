@@ -11,7 +11,7 @@ const editRideForm = (ridesObject) => {
 </div>
     <div class='form-group' id='select-staff'>
     </div>
-    <button type='button' id='update-ride--${ridesObject.firebaseKey}' class='btn btn-danger'>Update Ride</button>`;
+    <button type='button' id='update-ride--${ridesObject.rideID_firebaseKey}' class='btn btn-danger'>Update Ride</button>`;
 };
 
 export default editRideForm;
