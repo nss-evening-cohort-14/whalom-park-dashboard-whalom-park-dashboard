@@ -10,8 +10,20 @@ const getVisitors = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// CREATE
+// ADD
+const addVisitor = (visitorObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/Visitors.json`, visitorObject)
+    .then((response) => {
+      const body = { firebasekey: response.data.name };
+      console.warn(response);
+      console.warn(body);
+      axios.patch(`${dbUrl}/Visitors/${response.data.name}.json`, body)
+        .then(() => {
+          getVisitors().then((visitorsArray) => resolve(visitorsArray));
+        });
+    }).catch((error) => reject(error));
+});
 // DELETE
 // EDIT
 
-export default getVisitors;
+export { getVisitors, addVisitor };

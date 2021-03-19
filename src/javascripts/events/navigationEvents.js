@@ -1,7 +1,9 @@
 import 'firebase/auth';
 import createRides from '../components/cards/rides';
+import createVisitors from '../components/cards/visitors';
 import signOut from '../helpers/auth/signOut';
 import { getRides } from '../helpers/data/vendorData/ridesData';
+import { getVisitors } from '../helpers/data/visitorData/visitorsData';
 
 const navigationEvents = () => {
   // click event to show rides
@@ -25,9 +27,7 @@ const navigationEvents = () => {
 
   // click event to show visitors
   document.querySelector('#visitors-link').addEventListener('click', () => {
-    document.querySelector('#header').innerHTML = '<h1>Visitors Coming Soon!</h1>';
-    document.querySelector('#display-area').innerHTML = '';
-    document.querySelector('#add-button').innerHTML = '';
+    getVisitors().then((visitorsArray) => createVisitors(visitorsArray));
   });
 
   // LOGOUT BUTTON
