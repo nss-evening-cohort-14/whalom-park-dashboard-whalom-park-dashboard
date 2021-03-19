@@ -6,7 +6,7 @@ import domEvents from '../events/domEvents';
 import navigationEvents from '../events/navigationEvents';
 import { renderVendors, emptyVendors } from '../components/cards/vendor';
 import { getVendors } from '../helpers/data/vendorData/vendorData';
-import { getRides } from '../helpers/data/vendorData/ridesData';
+import { getRides } from '../helpers/data/rideData/ridesData';
 
 const startApp = (userObject) => {
   domBuilder();
