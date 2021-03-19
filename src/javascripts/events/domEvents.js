@@ -6,6 +6,9 @@ import {
 import createRides from '../components/cards/rides';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
+import { addVisitor } from '../helpers/data/visitorData/visitorsData';
+import createVisitors from '../components/cards/visitors';
+import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -51,6 +54,21 @@ const domEvents = () => {
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 
       $('#formModal').modal('toggle');
+    }
+
+    // CLICK EVENT FOR ADDING RIDE FORM
+    if (e.target.id.includes('add-visitor-btn')) {
+      createVisitorForm();
+    }
+    // ADD CLICK EVENT
+    if (e.target.id.includes('submit-visitor')) {
+      e.preventDefault();
+      const visitorObject = {
+        visitorFirstName: document.querySelector('#visitor-fn').value,
+        visitorLastName: document.querySelector('#visitor-ln').value,
+        visitorImageURL: document.querySelector('#visitor-image').value
+      };
+      addVisitor(visitorObject).then((visitorsArray) => createVisitors(visitorsArray));
     }
   });
 };
