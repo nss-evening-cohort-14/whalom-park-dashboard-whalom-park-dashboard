@@ -142,7 +142,6 @@ const domEvents = () => {
       };
       createVendor(vendorObj).then((vendors) => renderVendors(vendors));
     }
->>>>>>> development
   });
 };
 
