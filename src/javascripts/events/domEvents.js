@@ -3,12 +3,15 @@ import { renderVendors } from '../components/cards/vendor';
 import { createVendor, deleteVendor } from '../helpers/data/vendorData/vendorData';
 import addVendorForm from '../components/forms/vendorForms/addVendor';
 import createRideForm from '../components/forms/rideForms/createRideForm';
-import {
-  addRides, getSingleRide, updateRides, deleteRides
-} from '../helpers/data/rideData/ridesData';
 import createRides from '../components/cards/rides';
+import createStaffForm from '../components/forms/staffForms/createStaffForm';
+import { addStaff } from '../helpers/data/staffData/staffData';
+import createStaff from '../components/cards/staff';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
+import {
+  addRides, deleteRides, getSingleRide, updateRides
+} from '../helpers/data/rideData/ridesData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -54,6 +57,22 @@ const domEvents = () => {
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 
       $('#formModal').modal('toggle');
+    }
+
+    // CLICK EVENT FOR ADDING Ride FORM
+    if (e.target.id.includes('add-staff-btn')) {
+      createStaffForm();
+    }
+
+    // ADDING A STAFF
+    if (e.target.id.includes('submit-staff')) {
+      e.preventDefault();
+      const staffObject = {
+        staffFirstName: document.querySelector('#inFistName').value,
+        staffLastName: document.querySelector('#inLastName').value,
+        staffImageURL: document.querySelector('#staffImage').value,
+      };
+      addStaff(staffObject).then((staffArray) => createStaff(staffArray));
     }
 
     // DELETE VENDOR
