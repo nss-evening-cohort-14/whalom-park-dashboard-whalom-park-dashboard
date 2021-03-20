@@ -11,6 +11,7 @@ import {
   addRides, getSingleRide, updateRides, deleteRides
 } from '../helpers/data/rideData/ridesData';
 import createRides from '../components/cards/rides';
+import createRideForm from '../components/forms/rideForms/createRideForm';
 import createStaffForm from '../components/forms/staffForms/createStaffForm';
 import { addStaff } from '../helpers/data/staffData/staffData';
 import createStaff from '../components/cards/staff';
@@ -33,7 +34,7 @@ const domEvents = () => {
       const rideObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        staffID_firebaseKey: 'Mitchell'
+        staffID_firebaseKey: document.querySelector('#staff').value
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
@@ -59,7 +60,7 @@ const domEvents = () => {
       const ridesObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        // staffID_firebaseKey: document.querySelector('#staff')
+        staffID_firebaseKey: document.querySelector('#staff').value
       };
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 

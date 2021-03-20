@@ -1,4 +1,6 @@
-const createRideForm = () => {
+import selectStaff from '../selectStaff';
+
+const createRideForm = (ridesObject) => {
   // document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = `
@@ -10,8 +12,10 @@ const createRideForm = () => {
       <div class="form-group">
         <label for="image">Image URL</label>
         <input type="url" class="form-control" id="image" placeholder="Image URL" required>
+        <div class='form-group' id='select-staff'></div>
         <button type="button" id="submit-ride" class="btn btn-danger">Submit Ride</button>
       </div>`;
+  selectStaff(ridesObject);
 };
 
 export default createRideForm;
