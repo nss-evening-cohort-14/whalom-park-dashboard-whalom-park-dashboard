@@ -14,7 +14,10 @@ import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
 import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
-import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
+import {
+  addVisitor, deleteVisitor, getSingleVisitor, updateVisitor
+} from '../helpers/data/visitorData/visitorsData';
+import editVisitorForm from '../components/forms/visitorForms/editVisitorForm';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -101,7 +104,26 @@ const domEvents = () => {
       deleteVisitor(firebaseKey).then((visitorsArray) => showVisitors(visitorsArray));
     }
 
+    // CLICK EVENT TO EDIT VISITOR
+    if (e.target.id.includes('edit-visitor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Pin');
+      getSingleVisitor(firebaseKey).then((visitorObject) => editVisitorForm(visitorObject));
+    }
+
     // CLICK EVENT TO UPDATE VISITOR
+    if (e.target.id.includes('update-visitor')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      const visitorObject = {
+        visitorFirstName: document.querySelector('#visitor-fn').value,
+        visitorLastName: document.querySelector('#visitor-ln').value,
+        visitorImageURL: document.querySelector('#visitor-image').value
+      };
+      updateVisitor(firebaseKey, visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
+
+      $('#formModal').modal('toggle');
+    }
 
     // CLICK EVENT FOR ADDING Ride FORM
     if (e.target.id.includes('add-staff-btn')) {
