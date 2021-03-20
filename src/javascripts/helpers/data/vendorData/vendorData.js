@@ -12,6 +12,13 @@ export const getVendors = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// GET SINGLE VENDOR
+export const getSingleVendor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/Vendors/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
 // DELETE VENDOR
 export const deleteVendor = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/Vendors/${firebaseKey}.json`)
@@ -32,9 +39,9 @@ export const createVendor = (vendorObj) => new Promise((resolve, reject) => {
 });
 
 // EDIT VENDOR
-// export const editVendor = (firebaseKey) => new Promise((resolve, reject) => {
-//   axios.patch(`${dbUrl}/Vendors/${firebaseKey}.json`, vendorObj)
-//     .then(() => getVendors(firebase.auth()))
-//     .then((vendorsArray) => resolve(vendorsArray))
-//     .catch((error) => reject(error));
-// });
+export const editVendor = (firebaseKey, vendorObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/Vendors/${firebaseKey}.json`, vendorObj)
+    .then(() => getVendors())
+    .then((vendorsArray) => resolve(vendorsArray))
+    .catch((error) => reject(error));
+});
