@@ -6,7 +6,9 @@ import { addStaff } from '../helpers/data/staffData/staffData';
 import createStaff from '../components/cards/staff';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
-import { addRides, deleteRides, getSingleRide, updateRides } from '../helpers/data/rideData/ridesData';
+import {
+  addRides, deleteRides, getSingleRide, updateRides
+} from '../helpers/data/rideData/ridesData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
