@@ -14,5 +14,4 @@ const startApp = (userObject) => {
   logoutButton();
   getRides(userObject).then((rides) => createRides(rides));
 };
-
 export default startApp;
