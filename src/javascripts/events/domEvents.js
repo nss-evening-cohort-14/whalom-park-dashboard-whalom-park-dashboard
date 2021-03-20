@@ -6,9 +6,9 @@ import {
 import createRides from '../components/cards/rides';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
-import { addVisitor } from '../helpers/data/visitorData/visitorsData';
-import createVisitors from '../components/cards/visitors';
+import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
+import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -56,11 +56,12 @@ const domEvents = () => {
       $('#formModal').modal('toggle');
     }
 
-    // CLICK EVENT FOR ADDING RIDE FORM
+    // VISITORS
+    // CLICK EVENT FOR ADDING VISITOR FORM
     if (e.target.id.includes('add-visitor-btn')) {
       createVisitorForm();
     }
-    // ADD CLICK EVENT
+    // CLICK EVENT FOR ADDING VISITOR
     if (e.target.id.includes('submit-visitor')) {
       e.preventDefault();
       const visitorObject = {
@@ -68,8 +69,15 @@ const domEvents = () => {
         visitorLastName: document.querySelector('#visitor-ln').value,
         visitorImageURL: document.querySelector('#visitor-image').value
       };
-      addVisitor(visitorObject).then((visitorsArray) => createVisitors(visitorsArray));
+      addVisitor(visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
     }
+    // CLICK EVENT TO DELETE VISITOR
+    if (e.target.id.includes('delete-visitor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteVisitor(firebaseKey).then((visitorsArray) => showVisitors(visitorsArray));
+    }
+
+    // CLICK EVENT TO UPDATE VISITOR
   });
 };
 

@@ -14,8 +14,8 @@ const getVisitors = () => new Promise((resolve, reject) => {
 const addVisitor = (visitorObject) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/Visitors.json`, visitorObject)
     .then((response) => {
-      const body = { firebasekey: response.data.name };
-      console.warn(response);
+      const body = { visitorID_firebaseKey: response.data.name };
+      console.warn(response.data);
       console.warn(body);
       axios.patch(`${dbUrl}/Visitors/${response.data.name}.json`, body)
         .then(() => {
@@ -23,7 +23,15 @@ const addVisitor = (visitorObject) => new Promise((resolve, reject) => {
         });
     }).catch((error) => reject(error));
 });
+
 // DELETE
+const deleteVisitor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/Visitors/${firebaseKey}.json`)
+    .then(() => getVisitors().then((visitorsArray) => resolve(visitorsArray)))
+    .catch((error) => reject(error));
+  console.warn(firebaseKey);
+});
+
 // EDIT
 
-export { getVisitors, addVisitor };
+export { getVisitors, addVisitor, deleteVisitor };

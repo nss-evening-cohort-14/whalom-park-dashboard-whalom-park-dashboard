@@ -1,6 +1,6 @@
 import 'firebase/auth';
 import createRides from '../components/cards/rides';
-import createVisitors from '../components/cards/visitors';
+import showVisitors from '../components/cards/visitors';
 import signOut from '../helpers/auth/signOut';
 import { getRides } from '../helpers/data/rideData/ridesData';
 import { getVisitors } from '../helpers/data/visitorData/visitorsData';
@@ -27,7 +27,7 @@ const navigationEvents = () => {
 
   // click event to show visitors
   document.querySelector('#visitors-link').addEventListener('click', () => {
-    getVisitors().then((visitorsArray) => createVisitors(visitorsArray));
+    getVisitors().then((visitorsArray) => showVisitors(visitorsArray));
   });
 
   // LOGOUT BUTTON
