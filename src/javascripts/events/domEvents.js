@@ -5,7 +5,9 @@ import addVendorForm from '../components/forms/vendorForms/addVendor';
 import createRideForm from '../components/forms/rideForms/createRideForm';
 import createRides from '../components/cards/rides';
 import createStaffForm from '../components/forms/staffForms/createStaffForm';
-import { addStaff } from '../helpers/data/staffData/staffData';
+import {
+  addStaff, deleteStaff, getSingleStaff, updateStaff
+} from '../helpers/data/staffData/staffData';
 import createStaff from '../components/cards/staff';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
@@ -15,6 +17,7 @@ import {
 import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
+import editStaffForm from '../components/forms/staffForms/editStaffForm';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -117,6 +120,33 @@ const domEvents = () => {
         staffImageURL: document.querySelector('#staffImage').value,
       };
       addStaff(staffObject).then((staffArray) => createStaff(staffArray));
+    }
+
+    // Delete STAFF
+    if (e.target.id.includes('delete-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteStaff(firebaseKey).then((staffArray) => createStaff(staffArray));
+    }
+
+    // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF
+    if (e.target.id.includes('edit-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Pin');
+      getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
+    }
+
+    // // CLICK EVENT FOR EDITING Staff
+    if (e.target.id.includes('update-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const staffObject = {
+        staffFirstName: document.querySelector('#firstName').value,
+        staffLastName: document.querySelector('#lastName').value,
+        staffImageURL: document.querySelector('#image').value,
+      };
+      updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
+
+      $('#formModal').modal('toggle');
     }
 
     // DELETE VENDOR
