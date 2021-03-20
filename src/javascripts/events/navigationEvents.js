@@ -3,6 +3,8 @@ import createRides from '../components/cards/rides';
 import createStaff from '../components/cards/staff';
 import signOut from '../helpers/auth/signOut';
 import { getStaff } from '../helpers/data/staffData/staffData';
+import { renderVendors, emptyVendors } from '../components/cards/vendor';
+import { getVendors } from '../helpers/data/vendorData/vendorData';
 import { getRides } from '../helpers/data/rideData/ridesData';
 
 const navigationEvents = () => {
@@ -33,6 +35,17 @@ const navigationEvents = () => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
+
+  // GET VENDORS
+  document.querySelector('#vendors-link').addEventListener('click', () => {
+    getVendors().then((vendorArray) => {
+      if (vendorArray.length) {
+        renderVendors(vendorArray);
+      } else {
+        emptyVendors();
+      }
+    });
+  });
 };
 
 export default navigationEvents;

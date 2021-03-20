@@ -1,5 +1,7 @@
 import 'firebase/auth';
-import createRideForm from '../components/forms/rideForms/createRideForm';
+import { renderVendors } from '../components/cards/vendor';
+import { createVendor, deleteVendor } from '../helpers/data/vendorData/vendorData';
+import addVendorForm from '../components/forms/vendorForms/addVendor';
 import createRides from '../components/cards/rides';
 import createStaffForm from '../components/forms/staffForms/createStaffForm';
 import { addStaff } from '../helpers/data/staffData/staffData';
@@ -14,7 +16,7 @@ const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
     // CLICK EVENT FOR ADDING RIDE FORM
     if (e.target.id.includes('add-ride-btn')) {
-      createRideForm();
+      // createRideForm();
     }
 
     // GET Info from Ride Form
@@ -70,6 +72,30 @@ const domEvents = () => {
         staffImageURL: document.querySelector('#staffImage').value,
       };
       addStaff(staffObject).then((staffArray) => createStaff(staffArray));
+    }
+
+    // DELETE VENDOR
+    if (e.target.id.includes('delete-vendor')) {
+      const vendorId = e.target.id.split('--')[1];
+      deleteVendor(vendorId).then((vendors) => renderVendors(vendors));
+    }
+
+    // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
+    if (e.target.id.includes('add-vendor-btn')) {
+      addVendorForm();
+    }
+
+    // CLICK EVENT FOR SUBMITTING FORM FOR ADDING VENDOR
+    if (e.target.id.includes('submit-vendor')) {
+      e.preventDefault();
+      const vendorObj = {
+        vendorName: document.querySelector('#name').value,
+        vendorImageURL: document.querySelector('#image').value,
+        vendorProduct: document.querySelector('#product').value,
+        vendorIsActive: document.querySelector('#active').checked,
+        staffID_firebaseKey: document.querySelector('#select-staff').value,
+      };
+      createVendor(vendorObj).then((vendors) => renderVendors(vendors));
     }
   });
 };
