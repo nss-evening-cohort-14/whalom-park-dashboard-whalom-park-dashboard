@@ -1,9 +1,9 @@
 const editVisitorForm = (visitorObject) => {
   document.querySelector('#modal-body').innerHTML = `
     <form id="submit-visitor-form" class="mb-4">
+    <label for="visitor-title">Add a Visitor</label>
       <div class="form-group">
-        <label for="visitor-title">Add a Visitor</label>
-        <input type="text" class="form-control" id="visitor-fn" aria-describedby="visitorFirstName" placeholder="Enter Visitor's First Name" value="${visitorObject.visitorFirstName}required>
+        <input type="text" class="form-control" id="visitor-fn" aria-describedby="visitorFirstName" placeholder="Enter Visitor's First Name" value="${visitorObject.visitorFirstName}" required>
         <input type="text" class="form-control" id="visitor-ln" aria-describedby="visitorLastName" placeholder="Enter Visitor's Last Name" value="${visitorObject.visitorLastName}" required>
       </div>
       <div class="form-group">
