@@ -3,7 +3,7 @@ import createRides from '../components/cards/rides';
 import createStaff from '../components/cards/staff';
 import signOut from '../helpers/auth/signOut';
 import { getStaff } from '../helpers/data/staffData/staffData';
-import { getRides } from '../helpers/data/vendorData/ridesData';
+import { getRides } from '../helpers/data/rideData/ridesData';
 
 const navigationEvents = () => {
   // click event to show rides
