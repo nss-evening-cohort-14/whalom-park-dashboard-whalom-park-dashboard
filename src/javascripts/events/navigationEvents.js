@@ -1,7 +1,9 @@
 import 'firebase/auth';
 import createRides from '../components/cards/rides';
 import showVisitors from '../components/cards/visitors';
+import createStaff from '../components/cards/staff';
 import signOut from '../helpers/auth/signOut';
+import { getStaff } from '../helpers/data/staffData/staffData';
 import { renderVendors, emptyVendors } from '../components/cards/vendor';
 import { getVendors } from '../helpers/data/vendorData/vendorData';
 import { getRides } from '../helpers/data/rideData/ridesData';
@@ -15,9 +17,7 @@ const navigationEvents = () => {
 
   // click event to show staff
   document.querySelector('#staff-link').addEventListener('click', () => {
-    document.querySelector('#header').innerHTML = '<h1>Staff Coming Soon!</h1>';
-    document.querySelector('#display-area').innerHTML = '';
-    document.querySelector('#add-button').innerHTML = '';
+    getStaff().then((staffArray) => createStaff(staffArray));
   });
 
   // click event to show vendors
