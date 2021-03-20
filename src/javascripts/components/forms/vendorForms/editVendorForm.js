@@ -1,3 +1,5 @@
+import selectStaff from '../selectStaff';
+
 const editVendorForm = (vendorObj) => {
   document.querySelector('#modal-body').innerHTML = `
     <form id="edit-vendor-form" class="mb-4">
@@ -19,8 +21,9 @@ const editVendorForm = (vendorObj) => {
         <input type="checkbox" class="form-check-input" id="vendor-active" ${vendorObj.vendorIsActive && 'checked'}>
         <label class="form-check-label" for="active">vendorIsActive?</label>
       </div>
-      <button type="submit" id="update-vendor--${vendorObj.firebaseKey}" class="btn btn-success">Update Vendor</button>
+      <button type="submit" id="update-vendor--${vendorObj.vendorID_firebaseKey}" class="btn btn-success">Update Vendor</button>
     </form>`;
+  selectStaff(vendorObj);
 };
 
 export default editVendorForm;

@@ -1,4 +1,6 @@
-const addVendorForm = () => {
+import selectStaff from '../selectStaff';
+
+const addVendorForm = (vendorObj) => {
   document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `
@@ -23,6 +25,7 @@ const addVendorForm = () => {
       </div>
       <button type="submit" id="submit-vendor" class="btn btn-primary">Submit Vendor</button>
     </form>`;
+  selectStaff(vendorObj);
 };
 
 export default addVendorForm;
