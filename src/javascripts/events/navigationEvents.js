@@ -1,7 +1,9 @@
 import 'firebase/auth';
 import createRides from '../components/cards/rides';
 import signOut from '../helpers/auth/signOut';
-import { getRides } from '../helpers/data/vendorData/ridesData';
+import { renderVendors, emptyVendors } from '../components/cards/vendor';
+import { getVendors } from '../helpers/data/vendorData/vendorData';
+import { getRides } from '../helpers/data/rideData/ridesData';
 
 const navigationEvents = () => {
   // click event to show rides
@@ -33,6 +35,17 @@ const navigationEvents = () => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
+
+  // GET VENDORS
+  document.querySelector('#vendors-link').addEventListener('click', () => {
+    getVendors().then((vendorArray) => {
+      if (vendorArray.length) {
+        renderVendors(vendorArray);
+      } else {
+        emptyVendors();
+      }
+    });
+  });
 };
 
 export default navigationEvents;
