@@ -3,6 +3,7 @@ import { renderVendors } from '../components/cards/vendor';
 import { createVendor, deleteVendor } from '../helpers/data/vendorData/vendorData';
 import addVendorForm from '../components/forms/vendorForms/addVendor';
 import createRides from '../components/cards/rides';
+import createRideForm from '../components/forms/rideForms/createRideForm';
 import createStaffForm from '../components/forms/staffForms/createStaffForm';
 import { addStaff } from '../helpers/data/staffData/staffData';
 import createStaff from '../components/cards/staff';
@@ -16,7 +17,7 @@ const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
     // CLICK EVENT FOR ADDING RIDE FORM
     if (e.target.id.includes('add-ride-btn')) {
-      // createRideForm();
+      createRideForm();
     }
 
     // GET Info from Ride Form
@@ -25,7 +26,7 @@ const domEvents = () => {
       const rideObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        staffID_firebaseKey: 'Mitchell'
+        staffID_firebaseKey: document.querySelector('#staff').value
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
@@ -51,7 +52,7 @@ const domEvents = () => {
       const ridesObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        // staffID_firebaseKey: document.querySelector('#staff')
+        staffID_firebaseKey: document.querySelector('#staff').value
       };
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 
