@@ -12,6 +12,9 @@ import editRideForm from '../components/forms/rideForms/editRideForm';
 import {
   addRides, deleteRides, getSingleRide, updateRides
 } from '../helpers/data/rideData/ridesData';
+import showVisitors from '../components/cards/visitors';
+import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
+import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -58,6 +61,47 @@ const domEvents = () => {
 
       $('#formModal').modal('toggle');
     }
+
+    // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
+    if (e.target.id.includes('add-vendor-btn')) {
+      addVendorForm();
+    }
+
+    // CLICK EVENT FOR SUBMITTING FORM FOR ADDING VENDOR
+    if (e.target.id.includes('submit-vendor')) {
+      e.preventDefault();
+      const vendorObj = {
+        vendorName: document.querySelector('#name').value,
+        vendorImageURL: document.querySelector('#image').value,
+        vendorProduct: document.querySelector('#product').value,
+        vendorIsActive: document.querySelector('#active').checked,
+        staffID_firebaseKey: document.querySelector('#select-staff').value,
+      };
+      createVendor(vendorObj).then((vendors) => renderVendors(vendors));
+    }
+
+    // VISITORS
+    // CLICK EVENT FOR ADDING VISITOR FORM
+    if (e.target.id.includes('add-visitor-btn')) {
+      createVisitorForm();
+    }
+    // CLICK EVENT FOR ADDING VISITOR
+    if (e.target.id.includes('submit-visitor')) {
+      e.preventDefault();
+      const visitorObject = {
+        visitorFirstName: document.querySelector('#visitor-fn').value,
+        visitorLastName: document.querySelector('#visitor-ln').value,
+        visitorImageURL: document.querySelector('#visitor-image').value
+      };
+      addVisitor(visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
+    }
+    // CLICK EVENT TO DELETE VISITOR
+    if (e.target.id.includes('delete-visitor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteVisitor(firebaseKey).then((visitorsArray) => showVisitors(visitorsArray));
+    }
+
+    // CLICK EVENT TO UPDATE VISITOR
 
     // CLICK EVENT FOR ADDING Ride FORM
     if (e.target.id.includes('add-staff-btn')) {
