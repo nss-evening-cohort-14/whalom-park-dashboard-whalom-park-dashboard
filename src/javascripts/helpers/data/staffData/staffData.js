@@ -29,4 +29,20 @@ const deleteStaff = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getStaff, addStaff, deleteStaff };
+// UPDATE STAFF
+const updateStaff = (firebaseKey, staffObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/Staff/${firebaseKey}.json`, staffObject)
+    .then(() => getStaff()).then((staffArray) => resolve(staffArray))
+    .catch((error) => reject(error));
+});
+
+// GET SINGLE STAFF
+const getSingleStaff = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/Staff/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+export {
+  getStaff, addStaff, deleteStaff, updateStaff, getSingleStaff
+};
