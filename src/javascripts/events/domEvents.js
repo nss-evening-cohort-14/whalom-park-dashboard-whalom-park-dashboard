@@ -18,6 +18,8 @@ import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
 import editStaffForm from '../components/forms/staffForms/editStaffForm';
+// import addingStaffToRide from '../helpers/data/staffData/staffRide';
+// import addingStaffwithRideAndVendor from '../helpers/data/staffData/staffRide';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -119,7 +121,9 @@ const domEvents = () => {
         staffLastName: document.querySelector('#inLastName').value,
         staffImageURL: document.querySelector('#staffImage').value,
       };
-      addStaff(staffObject).then((staffArray) => createStaff(staffArray));
+      const rideID = document.querySelector('#ride').value;
+      const vendorID = document.querySelector('#vendor').value;
+      addStaff(staffObject, rideID, vendorID).then((staffArray) => createStaff(staffArray));
     }
 
     // Delete STAFF

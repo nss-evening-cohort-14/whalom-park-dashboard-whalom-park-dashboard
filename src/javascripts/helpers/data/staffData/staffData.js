@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../auth/apiKeys';
+import addingStaftoRideAndVendor from './staffRide';
 
 const dbUrl = firebaseConfig.databaseURL;
 
@@ -11,7 +12,7 @@ const getStaff = () => new Promise((resolve, reject) => {
 });
 
 // Add Staff
-const addStaff = (staffObject) => new Promise((resolve, reject) => {
+const addStaff = (staffObject, rideID) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/Staff.json`, staffObject)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
@@ -19,6 +20,7 @@ const addStaff = (staffObject) => new Promise((resolve, reject) => {
         .then(() => {
           getStaff().then((staffArray) => resolve(staffArray));
         });
+      addingStaftoRideAndVendor(body.firebaseKey, rideID);
     }).catch((error) => reject(error));
 });
 
