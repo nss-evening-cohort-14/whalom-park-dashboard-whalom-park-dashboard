@@ -7,18 +7,21 @@ import {
 import addVendorForm from '../components/forms/vendorForms/addVendorForm';
 import editVendorForm from '../components/forms/vendorForms/editVendorForm';
 import createRideForm from '../components/forms/rideForms/createRideForm';
-import {
-  addRides, getSingleRide, updateRides, deleteRides
-} from '../helpers/data/rideData/ridesData';
 import createRides from '../components/cards/rides';
 import createStaffForm from '../components/forms/staffForms/createStaffForm';
-import { addStaff } from '../helpers/data/staffData/staffData';
+import {
+  addStaff, deleteStaff, getSingleStaff, updateStaff
+} from '../helpers/data/staffData/staffData';
 import createStaff from '../components/cards/staff';
 import formModal from '../components/forms/formModal';
 import editRideForm from '../components/forms/rideForms/editRideForm';
+import {
+  addRides, deleteRides, getSingleRide, updateRides
+} from '../helpers/data/rideData/ridesData';
 import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
+import editStaffForm from '../components/forms/staffForms/editStaffForm';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -150,6 +153,60 @@ const domEvents = () => {
       };
       addStaff(staffObject).then((staffArray) => createStaff(staffArray));
     }
+<<<<<<< HEAD
+=======
+
+    // Delete STAFF
+    if (e.target.id.includes('delete-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteStaff(firebaseKey).then((staffArray) => createStaff(staffArray));
+    }
+
+    // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF
+    if (e.target.id.includes('edit-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Pin');
+      getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
+    }
+
+    // // CLICK EVENT FOR EDITING Staff
+    if (e.target.id.includes('update-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const staffObject = {
+        staffFirstName: document.querySelector('#firstName').value,
+        staffLastName: document.querySelector('#lastName').value,
+        staffImageURL: document.querySelector('#image').value,
+      };
+      updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
+
+      $('#formModal').modal('toggle');
+    }
+
+    // DELETE VENDOR
+    if (e.target.id.includes('delete-vendor')) {
+      const vendorId = e.target.id.split('--')[1];
+      deleteVendor(vendorId).then((vendors) => renderVendors(vendors));
+    }
+
+    // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
+    if (e.target.id.includes('add-vendor-btn')) {
+      addVendorForm();
+    }
+
+    // CLICK EVENT FOR SUBMITTING FORM FOR ADDING VENDOR
+    if (e.target.id.includes('submit-vendor')) {
+      e.preventDefault();
+      const vendorObj = {
+        vendorName: document.querySelector('#name').value,
+        vendorImageURL: document.querySelector('#image').value,
+        vendorProduct: document.querySelector('#product').value,
+        vendorIsActive: document.querySelector('#active').checked,
+        staffID_firebaseKey: document.querySelector('#select-staff').value,
+      };
+      createVendor(vendorObj).then((vendors) => renderVendors(vendors));
+    }
+>>>>>>> development
   });
 };
 
