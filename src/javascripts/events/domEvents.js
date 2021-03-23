@@ -25,6 +25,13 @@ import {
 } from '../helpers/data/visitorData/visitorsData';
 import editVisitorForm from '../components/forms/visitorForms/editVisitorForm';
 import editStaffForm from '../components/forms/staffForms/editStaffForm';
+import renderEvents from '../components/cards/events';
+import {
+  getSingleEvent, createEvent,
+  deleteEvent, editEvent
+} from '../helpers/data/eventData/eventsData';
+import addEventForm from '../components/forms/eventForms/addEvent';
+import editEventForm from '../components/forms/eventForms/editEvent';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -196,6 +203,46 @@ const domEvents = () => {
       };
       updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
 
+      $('#formModal').modal('toggle');
+    }
+
+    // CLICK EVENT FOR ADDING EVENT FORM
+    if (e.target.id.includes('add-event-btn')) {
+      addEventForm();
+    }
+
+    // GET Info from Event Form
+    if (e.target.id.includes('submit-event')) {
+      e.preventDefault();
+      const eventObject = {
+        eventName: document.querySelector('#event-title').value,
+        eventImageURL: document.querySelector('#event-image').value,
+      };
+      createEvent(eventObject).then((eventsArray) => renderEvents(eventsArray));
+    }
+
+    // DELETE EVENT
+    if (e.target.id.includes('delete-event')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteEvent(firebaseKey).then((eventsArray) => renderEvents(eventsArray));
+    }
+
+    // CLICK EVENT FOR SHOWING MODAL TO EDIT EVENT
+    if (e.target.id.includes('edit-event-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Event');
+      getSingleEvent(firebaseKey).then((eventObject) => editEventForm(eventObject));
+    }
+
+    // CLICK EVENT FOR EDITING EVENT
+    if (e.target.id.includes('update-event')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const eventObject = {
+        eventName: document.querySelector('#event-title').value,
+        eventImageURL: document.querySelector('#event-image').value,
+      };
+      editEvent(firebaseKey, eventObject).then((eventsArray) => renderEvents(eventsArray));
       $('#formModal').modal('toggle');
     }
   });

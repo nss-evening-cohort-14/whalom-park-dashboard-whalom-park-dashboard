@@ -8,6 +8,8 @@ import { renderVendors, emptyVendors } from '../components/cards/vendor';
 import { getVendors } from '../helpers/data/vendorData/vendorData';
 import { getRides } from '../helpers/data/rideData/ridesData';
 import { getVisitors } from '../helpers/data/visitorData/visitorsData';
+import { getEvents } from '../helpers/data/eventData/eventsData';
+import renderEvents from '../components/cards/events';
 
 const navigationEvents = () => {
   // click event to show rides
@@ -30,6 +32,11 @@ const navigationEvents = () => {
   // click event to show visitors
   document.querySelector('#visitors-link').addEventListener('click', () => {
     getVisitors().then((visitorsArray) => showVisitors(visitorsArray));
+  });
+
+  // click event to show events
+  document.querySelector('#events-link').addEventListener('click', () => {
+    getEvents().then((eventsArray) => renderEvents(eventsArray));
   });
 
   // LOGOUT BUTTON
