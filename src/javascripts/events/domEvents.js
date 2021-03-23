@@ -1,7 +1,8 @@
 import 'firebase/auth';
 import { renderVendors } from '../components/cards/vendor';
 import {
-  getSingleVendor, createVendor, deleteVendor, editVendor
+  getSingleVendor, createVendor,
+  deleteVendor, editVendor
 } from '../helpers/data/vendorData/vendorData';
 import addVendorForm from '../components/forms/vendorForms/addVendorForm';
 import editVendorForm from '../components/forms/vendorForms/editVendorForm';
