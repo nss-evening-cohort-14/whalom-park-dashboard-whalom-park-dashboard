@@ -3,7 +3,7 @@ import 'firebase/auth';
 import { getStaff } from '../../helpers/data/staffData/staffData';
 
 const selectStaff = (ridesObject = {}) => {
-  let domString = `<label for="staff">Select Staff Member</label>
+  let domString = `<label for="staff">Select a Staff Member</label>
     <select class="form-control" id="staff" required>
     <option value="">Select Staff Member</option>`;
 
