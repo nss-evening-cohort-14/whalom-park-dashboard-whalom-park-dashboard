@@ -1,7 +1,10 @@
 import 'firebase/auth';
 import { renderVendors } from '../components/cards/vendor';
-import { createVendor, deleteVendor } from '../helpers/data/vendorData/vendorData';
-import addVendorForm from '../components/forms/vendorForms/addVendor';
+import {
+  getSingleVendor, createVendor, deleteVendor, editVendor
+} from '../helpers/data/vendorData/vendorData';
+import addVendorForm from '../components/forms/vendorForms/addVendorForm';
+import editVendorForm from '../components/forms/vendorForms/editVendorForm';
 import createRideForm from '../components/forms/rideForms/createRideForm';
 import createRides from '../components/cards/rides';
 import createStaffForm from '../components/forms/staffForms/createStaffForm';
@@ -16,7 +19,10 @@ import {
 } from '../helpers/data/rideData/ridesData';
 import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
-import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
+import {
+  addVisitor, deleteVisitor, getSingleVisitor, updateVisitor
+} from '../helpers/data/visitorData/visitorsData';
+import editVisitorForm from '../components/forms/visitorForms/editVisitorForm';
 import editStaffForm from '../components/forms/staffForms/editStaffForm';
 // import addingStaffToRide from '../helpers/data/staffData/staffRide';
 // import addingStaffwithRideAndVendor from '../helpers/data/staffData/staffRide';
@@ -34,7 +40,6 @@ const domEvents = () => {
       const rideObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        staffID_firebaseKey: document.querySelector('#staff').value
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
@@ -55,16 +60,20 @@ const domEvents = () => {
     // // CLICK EVENT FOR EDITING Ride
     if (e.target.id.includes('update-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
-      console.warn(firebaseKey);
       e.preventDefault();
       const ridesObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-        staffID_firebaseKey: document.querySelector('#staff').value
       };
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 
       $('#formModal').modal('toggle');
+    }
+
+    // DELETE VENDOR
+    if (e.target.id.includes('delete-vendor')) {
+      const vendorId = e.target.id.split('--')[1];
+      deleteVendor(vendorId).then((vendors) => renderVendors(vendors));
     }
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
@@ -76,13 +85,35 @@ const domEvents = () => {
     if (e.target.id.includes('submit-vendor')) {
       e.preventDefault();
       const vendorObj = {
-        vendorName: document.querySelector('#name').value,
-        vendorImageURL: document.querySelector('#image').value,
-        vendorProduct: document.querySelector('#product').value,
-        vendorIsActive: document.querySelector('#active').checked,
+        vendorName: document.querySelector('#vendor-name').value,
+        vendorImageURL: document.querySelector('#vendor-image').value,
+        vendorProduct: document.querySelector('#vendor-product').value,
+        vendorIsActive: document.querySelector('#vendor-active').checked,
         staffID_firebaseKey: document.querySelector('#select-staff').value,
       };
       createVendor(vendorObj).then((vendors) => renderVendors(vendors));
+    }
+
+    // CLICK EVENT FOR SHOWING MODAL FORM FOR VENDOR
+    if (e.target.id.includes('edit-vendor-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Vendor');
+      getSingleVendor(firebaseKey).then((vendorObj) => editVendorForm(vendorObj));
+    }
+
+    // CLICK EVENT FOR EDITING A VENDOR
+    if (e.target.id.includes('update-vendor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const vendorObj = {
+        vendorName: document.querySelector('#vendor-name').value,
+        vendorImageURL: document.querySelector('#vendor-image').value,
+        vendorProduct: document.querySelector('#vendor-product').value,
+        vendorIsActive: document.querySelector('#vendor-active').checked,
+        staffID_firebaseKey: document.querySelector('#select-staff').value,
+      };
+      editVendor(firebaseKey, vendorObj).then((vendorArray) => renderVendors(vendorArray));
+      $('#formModal').modal('toggle');
     }
 
     // VISITORS
@@ -106,7 +137,26 @@ const domEvents = () => {
       deleteVisitor(firebaseKey).then((visitorsArray) => showVisitors(visitorsArray));
     }
 
+    // CLICK EVENT TO EDIT VISITOR
+    if (e.target.id.includes('edit-visitor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Pin');
+      getSingleVisitor(firebaseKey).then((visitorObject) => editVisitorForm(visitorObject));
+    }
+
     // CLICK EVENT TO UPDATE VISITOR
+    if (e.target.id.includes('update-visitor')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      const visitorObject = {
+        visitorFirstName: document.querySelector('#visitor-fn').value,
+        visitorLastName: document.querySelector('#visitor-ln').value,
+        visitorImageURL: document.querySelector('#visitor-image').value
+      };
+      updateVisitor(firebaseKey, visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
+
+      $('#formModal').modal('toggle');
+    }
 
     // CLICK EVENT FOR ADDING Ride FORM
     if (e.target.id.includes('add-staff-btn')) {
@@ -125,7 +175,6 @@ const domEvents = () => {
       const vendorID = document.querySelector('#vendor').value;
       addStaff(staffObject, rideID, vendorID).then((staffArray) => createStaff(staffArray));
     }
-
     // Delete STAFF
     if (e.target.id.includes('delete-staff')) {
       const firebaseKey = e.target.id.split('--')[1];
@@ -151,30 +200,6 @@ const domEvents = () => {
       updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
 
       $('#formModal').modal('toggle');
-    }
-
-    // DELETE VENDOR
-    if (e.target.id.includes('delete-vendor')) {
-      const vendorId = e.target.id.split('--')[1];
-      deleteVendor(vendorId).then((vendors) => renderVendors(vendors));
-    }
-
-    // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
-    if (e.target.id.includes('add-vendor-btn')) {
-      addVendorForm();
-    }
-
-    // CLICK EVENT FOR SUBMITTING FORM FOR ADDING VENDOR
-    if (e.target.id.includes('submit-vendor')) {
-      e.preventDefault();
-      const vendorObj = {
-        vendorName: document.querySelector('#name').value,
-        vendorImageURL: document.querySelector('#image').value,
-        vendorProduct: document.querySelector('#product').value,
-        vendorIsActive: document.querySelector('#active').checked,
-        staffID_firebaseKey: document.querySelector('#select-staff').value,
-      };
-      createVendor(vendorObj).then((vendors) => renderVendors(vendors));
     }
   });
 };

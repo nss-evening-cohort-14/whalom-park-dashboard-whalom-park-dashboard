@@ -32,6 +32,20 @@ const deleteVisitor = (firebaseKey) => new Promise((resolve, reject) => {
   console.warn(firebaseKey);
 });
 
-// EDIT
+// SINGLE VISITOR
+const getSingleVisitor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/Visitors/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
 
-export { getVisitors, addVisitor, deleteVisitor };
+// UPDATE
+const updateVisitor = (firebaseKey, visitorObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/Visitors/${firebaseKey}.json`, visitorObject)
+    .then(() => getVisitors()).then((visitorsArray) => resolve(visitorsArray))
+    .catch((error) => reject(error));
+});
+
+export {
+  getVisitors, addVisitor, deleteVisitor, updateVisitor, getSingleVisitor
+};
