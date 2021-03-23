@@ -7,18 +7,16 @@ const renderVendors = (venArray) => {
 
   venArray.forEach((item) => {
     document.querySelector('#display-area').innerHTML += `
-    <div class="card m-4" id="vendor-card--${item.vendorID_firebaseKey}">
-      <img class="card-img-top" src=${item.vendorImageURL} alt=${item.vendorName} style="height: 400px;">
-    <div class="card body">
-        <h5 class="card-title">${item.vendorName}</h5>
-        <p class="card-text bold">${item.vendorIsActive ? `<span class="badge badge-info product-badge"><i class="fa fa-bell" aria-hidden="true"></i> Active</span> ${item.vendorProduct}` : `${item.vendorProduct}`}</p>
-        <div id="select-staff" class="form-group"></div>
-        <option value="${item.staffID_firebaseKey}">${item.staffFirstName} ${item.staffLastName}</option>
-        <br>
-        <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-vendor-btn--${item.vendorID_firebaseKey}">Edit Vendor</button>
-        <button class="btn btn-danger" id="delete-vendor--${item.vendorID_firebaseKey}">Delete Vendor</button>
-        </div>
-      </div>`;
+<div class="card m-3" id="vendor-card--${item.vendorID_firebaseKey}" style="width: 400px;">
+  <div class="card-body">
+    <img class="card-img-top" src=${item.vendorImageURL} alt=${item.vendorName}>
+    <h3 class="card-title">${item.vendorName}</h3>
+    <p class="card-text bold">${item.vendorIsActive ? `<span class="badge badge-info product-badge"><i class="fa fa-bell" aria-hidden="true"></i> Active</span> ${item.vendorProduct}` : `${item.vendorProduct}`}</p>
+
+    <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-vendor-btn--${item.vendorID_firebaseKey}">Edit Vendor</button>
+    <button class="btn btn-danger" type="button" id="delete-vendor--${item.vendorID_firebaseKey}">Delete Vendor</button>
+  </div>
+</div>`;
   });
 };
 

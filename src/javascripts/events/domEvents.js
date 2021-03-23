@@ -87,7 +87,7 @@ const domEvents = () => {
         vendorImageURL: document.querySelector('#vendor-image').value,
         vendorProduct: document.querySelector('#vendor-product').value,
         vendorIsActive: document.querySelector('#vendor-active').checked,
-        staffID_firebaseKey: document.querySelector('#select-staff').value,
+        // staffID_firebaseKey: document.querySelector('#select-staff').value,
       };
       createVendor(vendorObj).then((vendors) => renderVendors(vendors));
     }
@@ -108,7 +108,7 @@ const domEvents = () => {
         vendorImageURL: document.querySelector('#vendor-image').value,
         vendorProduct: document.querySelector('#vendor-product').value,
         vendorIsActive: document.querySelector('#vendor-active').checked,
-        staffID_firebaseKey: document.querySelector('#select-staff').value,
+        // staffID_firebaseKey: document.querySelector('#select-staff').value,
       };
       editVendor(firebaseKey, vendorObj).then((vendorArray) => renderVendors(vendorArray));
       $('#formModal').modal('toggle');
