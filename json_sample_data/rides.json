@@ -58,14 +58,5 @@
     "rideImageURL" : "https://stratescarnivalcompany.com/sites/default/files/styles/attraction-slider/public/attr/Double-Carousel.jpg?itok=V8pfB2jh",
     "rideName" : "Merry Go Round",
     "staffID_firebaseKey" : "-MVsSCV-i7KCbsP5UqM5"
-  },
-  "-MWFw8rql37uQSVfHXgb" : {
-    "rideID_firebaseKey" : "-MWFw8rql37uQSVfHXgb",
-    "rideImageURL" : "https://m.media-amazon.com/images/I/51EB7CXqGKL...",
-    "rideName" : "The Expanse Part 2",
-    "staffData" : {
-      "staffID_firebaseKey" : "-MVsSCUpqTQitM38mQA1",
-      "staffImgURL" : "http://2.bp.blogspot.com/-CT5_J682ZAo/UiYD6aB-nAI/AAAAAAAAAKA/3WY9q7fvpuA/s1600/Untitled.png"
-    }
   }
 }
