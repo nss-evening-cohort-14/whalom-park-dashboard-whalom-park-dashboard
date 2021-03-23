@@ -22,7 +22,6 @@ import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import { addVisitor, deleteVisitor } from '../helpers/data/visitorData/visitorsData';
 import editStaffForm from '../components/forms/staffForms/editStaffForm';
-// import { deleteStaffFromRidesAndVendors } from '../helpers/data/staffData/staffOnRideAndVendor';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -58,7 +57,6 @@ const domEvents = () => {
     // // CLICK EVENT FOR EDITING Ride
     if (e.target.id.includes('update-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
-      console.warn(firebaseKey);
       e.preventDefault();
       const ridesObject = {
         rideName: document.querySelector('#title').value,
@@ -152,15 +150,12 @@ const domEvents = () => {
         staffLastName: document.querySelector('#inLastName').value,
         staffImageURL: document.querySelector('#staffImage').value,
       };
-      const rideID = document.querySelector('#ride').value;
-      const vendorID = document.querySelector('#vendor').value;
-      addStaff(staffObject, rideID, vendorID).then((staffArray) => createStaff(staffArray));
+      addStaff(staffObject).then((staffArray) => createStaff(staffArray));
     }
     // Delete STAFF
     if (e.target.id.includes('delete-staff')) {
       const firebaseKey = e.target.id.split('--')[1];
       deleteStaff(firebaseKey).then((staffArray) => createStaff(staffArray));
-      // deleteStaffFromRidesAndVendors(firebaseKey);
     }
 
     // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF

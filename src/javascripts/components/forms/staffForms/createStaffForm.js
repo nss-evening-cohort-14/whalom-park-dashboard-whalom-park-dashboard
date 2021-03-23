@@ -1,7 +1,4 @@
-import selectRide from '../selectRide';
-import selectVendor from '../selectVendor';
-
-const createStaffForm = (staffObject) => {
+const createStaffForm = () => {
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = `
     <form id="submit-board-form" class="mb-4">
@@ -14,14 +11,8 @@ const createStaffForm = (staffObject) => {
       <div class="form-group">
         <label for="image">Image URL</label>
         <input type="url" class="form-control" id="staffImage" placeholder="Image URL" required>
-        <br>
-        <div class='form-group' id='select-ride'></div>
-        <br>
-        <div class='form-group' id='select-vendor'></div>
         <button type="button" id="submit-staff" class="btn btn-danger">Submit Staff</button>
       </div>`;
-  selectRide(staffObject);
-  selectVendor(staffObject);
 };
 
 export default createStaffForm;

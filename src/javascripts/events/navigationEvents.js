@@ -33,8 +33,10 @@ const navigationEvents = () => {
   });
 
   // LOGOUT BUTTON
-  document.querySelector('#logout-button')
-    .addEventListener('click', signOut);
+  document.querySelector('#logout-button').addEventListener('click', () => {
+    signOut();
+    getRides().then((ridesArray) => createRides(ridesArray));
+  });
 
   // GET VENDORS
   document.querySelector('#vendors-link').addEventListener('click', () => {
