@@ -1,4 +1,4 @@
-import selectStaff from '../selectStaff';
+// import selectStaff from '../selectStaff';
 
 const editVendorForm = (vendorObj) => {
   document.querySelector('#modal-body').innerHTML = `
@@ -24,7 +24,7 @@ const editVendorForm = (vendorObj) => {
     
       <button type="submit" id="update-vendor--${vendorObj.vendorID_firebaseKey}" class="btn btn-success">Update Vendor</button>
     </form>`;
-  selectStaff(vendorObj);
+  // selectStaff(vendorObj);
 };
 
 export default editVendorForm;

@@ -27,5 +27,4 @@ const emptyVendors = () => {
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#display-area').innerHTML = '<h1>No Vendors</h1>';
 };
-// id="card-body--${item.vendorID_firebaseKey}"
 export { renderVendors, emptyVendors };
