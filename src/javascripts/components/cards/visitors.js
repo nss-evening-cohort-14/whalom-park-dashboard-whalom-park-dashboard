@@ -11,6 +11,7 @@ const showVisitors = (visitorArray) => {
       <h5 class="card-title">${card.visitorFirstName} ${card.visitorLastName}</h5>
       ${firebase.auth().currentUser === null ? '' : `
       <button class="btn btn-outline-danger" id="delete-visitor--${card.visitorID_firebaseKey}" style="position: absolute; right:0; bottom: 0; color: #b1bac4; border: none;">🗑️</button>
+      <button class="btn" id="edit-visitor--${card.visitorID_firebaseKey}" style="position: absolute; left:0; bottom: 0; color: #b1bac4; border: none;" data-toggle="modal" data-target="#formModal">Edit Visitor</button>
       `}
   </div>`;
   });

@@ -44,5 +44,5 @@ const updateRides = (firebaseKey, ridesObject) => new Promise((resolve, reject) 
 });
 
 export {
-  getRides, addRides, getSingleRide, updateRides, deleteRides
+  getRides, addRides, getSingleRide, updateRides, deleteRides,
 };
