@@ -1,7 +1,8 @@
 import 'firebase/auth';
 import { renderVendors } from '../components/cards/vendor';
 import {
-  getSingleVendor, createVendor, deleteVendor, editVendor
+  getSingleVendor, createVendor,
+  deleteVendor, editVendor
 } from '../helpers/data/vendorData/vendorData';
 import addVendorForm from '../components/forms/vendorForms/addVendorForm';
 import editVendorForm from '../components/forms/vendorForms/editVendorForm';
@@ -87,7 +88,7 @@ const domEvents = (uid) => {
         vendorImageURL: document.querySelector('#vendor-image').value,
         vendorProduct: document.querySelector('#vendor-product').value,
         vendorIsActive: document.querySelector('#vendor-active').checked,
-        staffID_firebaseKey: document.querySelector('#select-staff').value,
+        // staffID_firebaseKey: document.querySelector('#select-staff').value,
       };
       createVendor(vendorObj).then((vendors) => renderVendors(vendors));
     }
@@ -108,7 +109,7 @@ const domEvents = (uid) => {
         vendorImageURL: document.querySelector('#vendor-image').value,
         vendorProduct: document.querySelector('#vendor-product').value,
         vendorIsActive: document.querySelector('#vendor-active').checked,
-        staffID_firebaseKey: document.querySelector('#select-staff').value,
+        // staffID_firebaseKey: document.querySelector('#select-staff').value,
       };
       editVendor(firebaseKey, vendorObj).then((vendorArray) => renderVendors(vendorArray));
       $('#formModal').modal('toggle');

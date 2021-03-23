@@ -1,5 +1,4 @@
 const createStaffForm = () => {
-  // document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = `
     <form id="submit-board-form" class="mb-4">
