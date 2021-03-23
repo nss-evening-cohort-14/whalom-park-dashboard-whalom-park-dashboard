@@ -1,13 +1,7 @@
 import 'firebase/auth';
 import { renderVendors } from '../components/cards/vendor';
-<<<<<<< HEAD
-import { createVendor, deleteVendor } from '../helpers/data/vendorData/vendorData';
-import addVendorForm from '../components/forms/vendorForms/addVendor';
-=======
->>>>>>> development
 import {
-  getSingleVendor, createVendor,
-  deleteVendor, editVendor
+  getSingleVendor, createVendor, deleteVendor, editVendor
 } from '../helpers/data/vendorData/vendorData';
 import addVendorForm from '../components/forms/vendorForms/addVendorForm';
 import editVendorForm from '../components/forms/vendorForms/editVendorForm';
@@ -44,11 +38,6 @@ const domEvents = () => {
       const rideObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-<<<<<<< HEAD
-        // staffID_firebaseKey: document.querySelector('#staff').value,
-=======
-        staffID_firebaseKey: 'Mitchell'
->>>>>>> development
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
@@ -73,11 +62,6 @@ const domEvents = () => {
       const ridesObject = {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
-<<<<<<< HEAD
-        // staffID_firebaseKey: document.querySelector('#staff').value
-=======
-        // staffID_firebaseKey: document.querySelector('#staff')
->>>>>>> development
       };
       updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 
