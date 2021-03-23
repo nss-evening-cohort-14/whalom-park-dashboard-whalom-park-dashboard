@@ -3,9 +3,9 @@ import 'firebase/auth';
 import { getStaff } from '../../helpers/data/staffData/staffData';
 
 const selectStaff = (ridesObject = {}) => {
-  let domString = `<label for="staff">Select an Author</label>
+  let domString = `<label for="staff">Select Staff Member</label>
     <select class="form-control" id="staff" required>
-    <option value="">Select an Staff Member</option>`;
+    <option value="">Select Staff Member</option>`;
 
   getStaff().then((staffArray) => {
     staffArray.forEach((staff) => {

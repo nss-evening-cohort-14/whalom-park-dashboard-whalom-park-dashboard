@@ -23,6 +23,7 @@ const addVendorForm = (vendorObj) => {
         <input type="checkbox" class="form-check-input" id="vendor-active">
         <label class="form-check-label" for="active">vendorIsActive?</label>
       </div>
+      <div id="select-staff" class="form-group"></div>
       <button type="submit" id="submit-vendor" class="btn btn-primary">Submit Vendor</button>
     </form>`;
   selectStaff(vendorObj);
