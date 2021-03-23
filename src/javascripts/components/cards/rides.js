@@ -10,6 +10,7 @@ const createRides = (array) => {
       <h5 class="card-title">${item.rideName}</h5>
       <button class="btn btn-outline-danger" id="delete-ride--${item.rideID_firebaseKey}" style="position: absolute; right:0; bottom: 0; color: #b1bac4; border: none;">🗑️</button>
       <button class="btn" id="edit-ride--${item.rideID_firebaseKey}" style="position: absolute; left:0; bottom: 0; color: #b1bac4; border: none;" data-toggle="modal" data-target="#formModal">Edit Ride</button>
+      <div id="user-image-container" class="mx-auto"><img src="${item.staffImageURL}" class="public-pin-user-image" alt=""></img></div>
   </div>`;
   });
 };
