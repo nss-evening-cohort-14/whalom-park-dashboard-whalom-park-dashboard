@@ -11,8 +11,8 @@ import { getRides } from '../helpers/data/rideData/ridesData';
 const startApp = (userObject) => {
   domBuilder();
   navBar();
-  domEvents();
-  navigationEvents();
+  domEvents(userObject.uid);
+  navigationEvents(userObject.uid);
 
   getVendors(userObject).then((vendorArray) => {
     if (vendorArray.length) {

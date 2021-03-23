@@ -9,10 +9,10 @@ import { getVendors } from '../helpers/data/vendorData/vendorData';
 import { getRides } from '../helpers/data/rideData/ridesData';
 import { getVisitors } from '../helpers/data/visitorData/visitorsData';
 
-const navigationEvents = () => {
+const navigationEvents = (uid) => {
   // click event to show rides
   document.querySelector('#rides-link').addEventListener('click', () => {
-    getRides().then((ridesArray) => createRides(ridesArray));
+    getRides().then((ridesArray) => createRides(ridesArray, uid));
   });
 
   // click event to show staff
