@@ -15,8 +15,6 @@ const editVendorForm = (vendorObj) => {
         <label for="product">Product</label>
         <input type="text" class="form-control" id="vendor-product" placeholder="Vendor Product" value="${vendorObj.vendorProduct}" required>
       </div>
-      <div class="form-group" id="select-staff">
-      </div>
       <div class="form-check mb-2">
         <input type="checkbox" class="form-check-input" id="vendor-active" ${vendorObj.vendorIsActive && 'checked'}>
         <label class="form-check-label" for="active">vendorIsActive?</label>

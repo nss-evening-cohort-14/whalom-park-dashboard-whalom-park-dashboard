@@ -9,13 +9,12 @@ const renderVendors = (venArray) => {
 
   venArray.forEach((item) => {
     document.querySelector('#display-area').innerHTML += `
-    <div class="card m-3" id="vendor-card--${item.vendorID_firebaseKey}" style="width: 400px;">
+    <div class="card m-3" id="vendor-card--${item.vendorID_firebaseKey}" style="width: 400px; height: 450px;">
     <div class="card body" id="vendor-body--${item.firebaseKey}">
-        <img class="card-img-top" src=${item.vendorImageURL} alt=${item.vendorName} style="height: 400px;">
+        <img class="card-img-top" src=${item.vendorImageURL} alt=${item.vendorName} style="height: 350px;">
         <div class="card-body--${item.firebaseKey}" style="height: 180px;">
         <h5 class="card-title">${item.vendorName}</h5>
         <p class="card-text bold">${item.vendorIsActive ? `<span class="badge badge-info product-badge"><i class="fa fa-bell" aria-hidden="true"></i> Active</span> ${item.vendorProduct}` : `${item.vendorProduct}`}</p>
-        <hr>
         ${firebase.auth().currentUser === null ? '' : `
         <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-vendor-btn--${item.vendorID_firebaseKey}">Edit Vendor</button>
         <button class="btn btn-danger" id="delete-vendor--${item.vendorID_firebaseKey}">Delete Vendor</button>
