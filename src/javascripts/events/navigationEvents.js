@@ -1,6 +1,5 @@
 import 'firebase/auth';
 import createRides from '../components/cards/rides';
-import showVisitors from '../components/cards/visitors';
 import createStaff from '../components/cards/staff';
 import signOut from '../helpers/auth/signOut';
 import { getStaff } from '../helpers/data/staffData/staffData';
@@ -10,6 +9,7 @@ import { getRides } from '../helpers/data/rideData/ridesData';
 import { getVisitors } from '../helpers/data/visitorData/visitorsData';
 import { getEvents } from '../helpers/data/eventData/eventsData';
 import renderEvents from '../components/cards/events';
+import showVisitors from '../components/cards/visitors';
 
 const navigationEvents = () => {
   // click event to show rides
