@@ -1,5 +1,5 @@
 const navBar = () => {
-  document.querySelector('#login-form-container').innerHTML = '';
+  // document.querySelector('#login-form-container').innerHTML = '';
   document.querySelector('#navigation').innerHTML = `
   <nav class="navbar navbar-expand-lg navbar-dark mb-4" style="background-color: rgb(26, 24, 24); justify-content-space-evenly;">
   <button
