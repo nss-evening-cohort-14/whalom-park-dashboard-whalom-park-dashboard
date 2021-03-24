@@ -59,7 +59,7 @@ const domEvents = (uid) => {
     // CLICK EVENT FOR SHOWING MODAL TO EDIT RIDE
     if (e.target.id.includes('edit-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Pin');
+      formModal('Edit Rides');
       getSingleRide(firebaseKey).then((rideObject) => editRideForm(rideObject, uid));
     }
 
@@ -146,7 +146,7 @@ const domEvents = (uid) => {
     // CLICK EVENT TO EDIT VISITOR
     if (e.target.id.includes('edit-visitor')) {
       const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Pin');
+      formModal('Edit Visitor');
       getSingleVisitor(firebaseKey).then((visitorObject) => editVisitorForm(visitorObject));
     }
 
@@ -188,7 +188,7 @@ const domEvents = (uid) => {
     // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF
     if (e.target.id.includes('edit-staff')) {
       const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Pin');
+      formModal('Edit Staff');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
     }
 
