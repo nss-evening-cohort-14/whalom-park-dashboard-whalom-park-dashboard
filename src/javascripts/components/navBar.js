@@ -31,13 +31,10 @@ const navBar = () => {
      <a class="nav-link pl-5 pr-5" style="color: #58a6ff; font-size: 30px; text-shadow: 1px 1px black;" id="events-link" href="#">Events</a>
    </li>
    </ul>
-   <form class="d-flex">
-   <input id="search" class="form-control" type="search" placeholder="Search Stuff" aria-label="Search">
-</form>
-        <div id="logout-button"></div>
-        <div id="login-button"></div>
-     </div>
-   </nav>
+    <div id="logout-button"></div>
+    <div id="login-button"></div>
+  </div>
+</nav>
     `;
 };
 
