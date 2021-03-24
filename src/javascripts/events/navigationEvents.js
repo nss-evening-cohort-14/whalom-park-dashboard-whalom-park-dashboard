@@ -11,10 +11,10 @@ import { getVisitors } from '../helpers/data/visitorData/visitorsData';
 import { getEvents } from '../helpers/data/eventData/eventsData';
 import renderEvents from '../components/cards/events';
 
-const navigationEvents = (uid) => {
+const navigationEvents = () => {
   // click event to show rides
   document.querySelector('#rides-link').addEventListener('click', () => {
-    getRides().then((ridesArray) => createRides(ridesArray, uid));
+    getRides().then((ridesArray) => createRides(ridesArray));
   });
 
   // click event to show staff
