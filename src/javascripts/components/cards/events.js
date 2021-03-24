@@ -1,8 +1,13 @@
 import firebase from 'firebase';
 
 const renderEvents = (eventArray) => {
+  const isUserLoggedIn = firebase.auth().currentUser;
   document.querySelector('#header').innerHTML = '<h1> Events </h1>';
-  document.querySelector('#add-button').innerHTML = '<button class="btn btn-outline-danger btn mb-4" id="add-event-btn">Add Event</button>';
+  document.querySelector('#add-button').innerHTML = `<div>
+  ${isUserLoggedIn === null ? '' : `
+  '<button class="btn btn-outline-danger btn mb-4" id="add-vendor-btn">Add Vendor</button>'
+  `}
+  </div>`;
   document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
 
