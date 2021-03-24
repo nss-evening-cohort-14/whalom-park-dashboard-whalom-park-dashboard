@@ -190,6 +190,7 @@ const domEvents = (uid) => {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Pin');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
+      $('#formModal').modal('toggle');
     }
 
     // // CLICK EVENT FOR EDITING Staff
@@ -202,7 +203,6 @@ const domEvents = (uid) => {
         staffImageURL: document.querySelector('#image').value,
       };
       updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
-
       $('#formModal').modal('toggle');
     }
 
