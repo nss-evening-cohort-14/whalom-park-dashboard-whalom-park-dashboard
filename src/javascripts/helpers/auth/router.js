@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import loginButton from '../../components/buttons/loginButton';
 import logoutButton from '../../components/buttons/logoutButton';
+import hideCreate from '../../events/hideCreate';
 import startApp from '../../views/startApp';
 import firebaseConfig from './apiKeys';
 
@@ -15,6 +16,7 @@ const checkLoginStatus = () => {
     } else {
       // person is NOT logged in
       loginButton();
+      hideCreate();
     }
   });
 };
