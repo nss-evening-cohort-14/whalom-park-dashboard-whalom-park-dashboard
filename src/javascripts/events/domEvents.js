@@ -18,7 +18,6 @@ import editRideForm from '../components/forms/rideForms/editRideForm';
 import {
   addRides, deleteRides, getSingleRide, updateRides
 } from '../helpers/data/rideData/ridesData';
-import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import {
   addVisitor, deleteVisitor, getSingleVisitor, updateVisitor
@@ -32,8 +31,9 @@ import {
 } from '../helpers/data/eventData/eventsData';
 import addEventForm from '../components/forms/eventForms/addEvent';
 import editEventForm from '../components/forms/eventForms/editEvent';
+import showVisitors from '../components/cards/visitors';
 
-const domEvents = (uid) => {
+const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
     // CLICK EVENT FOR ADDING RIDE FORM
     if (e.target.id.includes('add-ride-btn')) {
@@ -47,20 +47,20 @@ const domEvents = (uid) => {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
       };
-      addRides(rideObject).then((ridesArray) => createRides(ridesArray, uid));
+      addRides(rideObject).then((ridesArray) => createRides(ridesArray));
     }
 
     // Delete Ride
     if (e.target.id.includes('delete-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
-      deleteRides(firebaseKey).then((ridesArray) => createRides(ridesArray, uid));
+      deleteRides(firebaseKey).then((ridesArray) => createRides(ridesArray));
     }
 
     // CLICK EVENT FOR SHOWING MODAL TO EDIT RIDE
     if (e.target.id.includes('edit-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Rides');
-      getSingleRide(firebaseKey).then((rideObject) => editRideForm(rideObject, uid));
+      getSingleRide(firebaseKey).then((rideObject) => editRideForm(rideObject));
     }
 
     // // CLICK EVENT FOR EDITING Ride
@@ -71,7 +71,7 @@ const domEvents = (uid) => {
         rideName: document.querySelector('#title').value,
         rideImageURL: document.querySelector('#image').value,
       };
-      updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray, uid));
+      updateRides(firebaseKey, ridesObject).then((ridesArray) => createRides(ridesArray));
 
       $('#formModal').modal('toggle');
     }
@@ -190,6 +190,7 @@ const domEvents = (uid) => {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Staff');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
+      $('#formModal').modal('toggle');
     }
 
     // // CLICK EVENT FOR EDITING Staff
@@ -202,7 +203,6 @@ const domEvents = (uid) => {
         staffImageURL: document.querySelector('#image').value,
       };
       updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
-
       $('#formModal').modal('toggle');
     }
 
