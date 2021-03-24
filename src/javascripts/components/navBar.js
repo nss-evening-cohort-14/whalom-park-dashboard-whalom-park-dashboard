@@ -27,6 +27,9 @@ const navBar = () => {
    <li class="nav-item">
    <a class="nav-link pl-5 pr-5" style="color: #58a6ff; font-size: 30px; text-shadow: 1px 1px black;" id="visitors-link" href="#">Visitors</a>
  </li>
+    <li class="nav-item">
+     <a class="nav-link pl-5 pr-5" style="color: #58a6ff; font-size: 30px; text-shadow: 1px 1px black;" id="events-link" href="#">Events</a>
+   </li>
    </ul>
    <form class="d-flex">
    <input id="search" class="form-control" type="search" placeholder="Search Stuff" aria-label="Search">
