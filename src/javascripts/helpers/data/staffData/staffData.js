@@ -14,7 +14,7 @@ const getStaff = () => new Promise((resolve, reject) => {
 const addStaff = (staffObject) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/Staff.json`, staffObject)
     .then((response) => {
-      const body = { firebaseKey: response.data.name };
+      const body = { staffID_firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/Staff/${response.data.name}.json`, body)
         .then(() => {
           getStaff().then((staffArray) => resolve(staffArray));
