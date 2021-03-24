@@ -13,8 +13,8 @@ import { getEvents } from '../helpers/data/eventData/eventsData';
 const startApp = (userObject) => {
   domBuilder();
   navBar();
-  domEvents(userObject.uid);
-  navigationEvents(userObject.uid);
+  domEvents();
+  navigationEvents();
 
   getVendors(userObject).then((vendorArray) => {
     if (vendorArray.length) {
