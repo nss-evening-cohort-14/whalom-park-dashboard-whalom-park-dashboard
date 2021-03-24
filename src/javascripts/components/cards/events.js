@@ -8,7 +8,7 @@ const renderEvents = (eventArray) => {
   document.querySelector('#form-container').innerHTML = '';
 
   eventArray.forEach((item) => {
-    document.querySelector('#display-area').innerHTML += `<div class="card m-4" id="event-card--${item.eventID_firebaseKey}" style="border-radius: 22px; background-color: #484f58;">
+    document.querySelector('#display-area').innerHTML += `<div class="card m-4" id="event-card--${item.eventID_firebaseKey}" style="border-radius: 22px; background-color: #484f58; color: white;">
     <div id="event-body--${item.firebaseKey}" class="card-body" style="height: 400px; width: 350px; background-image: url('${item.eventImageURL}'); border-radius: 18px; background-size: Cover; background-repeat: no-repeat;">
       <h3 class="card-title">${item.eventName}</h3>
       ${isUserLoggedIn === null ? '' : `

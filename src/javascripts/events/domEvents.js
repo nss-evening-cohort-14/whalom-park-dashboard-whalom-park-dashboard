@@ -18,7 +18,6 @@ import editRideForm from '../components/forms/rideForms/editRideForm';
 import {
   addRides, deleteRides, getSingleRide, updateRides
 } from '../helpers/data/rideData/ridesData';
-import showVisitors from '../components/cards/visitors';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import {
   addVisitor, deleteVisitor, getSingleVisitor, updateVisitor
@@ -32,6 +31,7 @@ import {
 } from '../helpers/data/eventData/eventsData';
 import addEventForm from '../components/forms/eventForms/addEvent';
 import editEventForm from '../components/forms/eventForms/editEvent';
+import showVisitors from '../components/cards/visitors';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -59,7 +59,7 @@ const domEvents = () => {
     // CLICK EVENT FOR SHOWING MODAL TO EDIT RIDE
     if (e.target.id.includes('edit-ride')) {
       const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Pin');
+      formModal('Edit Rides');
       getSingleRide(firebaseKey).then((rideObject) => editRideForm(rideObject));
     }
 
@@ -146,7 +146,7 @@ const domEvents = () => {
     // CLICK EVENT TO EDIT VISITOR
     if (e.target.id.includes('edit-visitor')) {
       const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Pin');
+      formModal('Edit Visitor');
       getSingleVisitor(firebaseKey).then((visitorObject) => editVisitorForm(visitorObject));
     }
 
@@ -188,7 +188,7 @@ const domEvents = () => {
     // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF
     if (e.target.id.includes('edit-staff')) {
       const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Pin');
+      formModal('Edit Staff');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
       $('#formModal').modal('toggle');
     }
