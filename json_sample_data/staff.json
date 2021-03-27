@@ -5,12 +5,6 @@
     "staffImageURL" : "https://images.freeimages.com/images/small-previews/b03/carney-1428983.jpg",
     "staffLastName" : "Openshaw"
   },
-  "-MVsSCUpqTQitM38mQA1" : {
-    "staffFirstName" : "Audry",
-    "staffID_firebaseKey" : "-MVsSCUpqTQitM38mQA1",
-    "staffImageURL" : "https://pbs.twimg.com/media/ECgwd7yWsAc2WUf.jpg106e-11e4-88b3-001a4bcf887a/53cc603b26f1e.image.jpg",
-    "staffLastName" : "Willimott"
-  },
   "-MVsSCUqJ29fIS7bXDEU" : {
     "staffFirstName" : "Lance",
     "staffID_firebaseKey" : "-MVsSCUqJ29fIS7bXDEU",
@@ -35,12 +29,6 @@
     "staffImageURL" : "https://static01.nyt.com/images/2015/09/02/business/02carnival3/02carnival3-jumbo.jpg",
     "staffLastName" : "Gottelier"
   },
-  "-MVsSCUwlEJ49SZcupj6" : {
-    "staffFirstName" : "Aubrey",
-    "staffID_firebaseKey" : "-MVsSCUwlEJ49SZcupj6",
-    "staffImageURL" : "https://bloximages.chicago2.vip.townnews.com/nwitimes.com/content/tncms/assets/v3/editorial/7/40/740ec94f-14ae-51ef-827c-54b46ea9fbe7/59766884d5b41.image.jpg?resize=1200%2C900",
-    "staffLastName" : "Tollet"
-  },
   "-MVsSCUxC0HBDpDQ6ZAV" : {
     "staffFirstName" : "Lettie",
     "staffID_firebaseKey" : "-MVsSCUxC0HBDpDQ6ZAV",
@@ -58,5 +46,35 @@
     "staffID_firebaseKey" : "-MVsSCV-i7KCbsP5UqM5",
     "staffImageURL" : "https://hateonhater.files.wordpress.com/2014/02/four-carny.jpg",
     "staffLastName" : "Lermouth"
+  },
+  "-MWoJB0IZStIiUsIQUzc" : {
+    "staffFirstName" : "Fred",
+    "staffID_firebaseKey" : "-MWoJB0IZStIiUsIQUzc",
+    "staffImageURL" : "http://2.bp.blogspot.com/-CT5_J682ZAo/UiYD6aB-nAI/AAAAAAAAAKA/3WY9q7fvpuA/s1600/Untitled.png",
+    "staffLastName" : "Smith"
+  },
+  "-MWoJNWqLP6uCuBZdY8f" : {
+    "staffFirstName" : "bob",
+    "staffID_firebaseKey" : "-MWoJNWqLP6uCuBZdY8f",
+    "staffImageURL" : "https://cdn.vox-cdn.com/thumbor/PyCuMFoZdXK785irKVy2TdThfXA=/250x250/cdn.vox-cdn.com/uploads/chorus_asset/file/16771807/640228537.jpg",
+    "staffLastName" : "Dav"
+  },
+  "-MWoJS81ayEY40pTUxaD" : {
+    "staffFirstName" : "NotBOB",
+    "staffID_firebaseKey" : "-MWoJS81ayEY40pTUxaD",
+    "staffImageURL" : "http://dallasvintageshop.com/wp-content/uploads/2010/07/Photo-Jul-23-5-28-26-PM-2.jpg",
+    "staffLastName" : "NewBOBLastName"
+  },
+  "-MWoJgJb8bKK7c-FZh6b" : {
+    "staffFirstName" : "Juan",
+    "staffID_firebaseKey" : "-MWoJgJb8bKK7c-FZh6b",
+    "staffImageURL" : "https://i.pinimg.com/originals/a1/59/69/a15969b90af190e107aeca59e8a24999.jpg",
+    "staffLastName" : "D"
+  },
+  "-MWoJvgu8Fvc0FsZxdJq" : {
+    "staffFirstName" : "Alonzo",
+    "staffID_firebaseKey" : "-MWoJvgu8Fvc0FsZxdJq",
+    "staffImageURL" : "https://i1.wp.com/thatrandomagency.com/wp-content/uploads/2020/05/Lauren_headshot.png?resize=640%2C873&ssl=1",
+    "staffLastName" : "Harris"
   }
 }
