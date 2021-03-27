@@ -8,11 +8,11 @@ PO: **Aja**
 ## Description
 Whalom Park, based in Lunenburg, Massachusetts, is the 13th oldest amusement park in the United States.  Well, at least it was the 13th oldest park until it was closed in 2000.  Luckily, somebody started a successful GoFundMe in order to bring back the park, which would make it now the world's 11th oldest amusement park!  Part of the funding for re-opening Whalom Park will go to a team of developers in order to create an admin dashboard that will allow the new owners of the park to easily manage the vendors, the rides, and staff, as well as keeping track of the visitors.  Congratulations, you are that team!  Bringing this park back to life is going to be "A Whale of a Good Time" (That is the official slogan)
 
-## Deploy: https://e14-whalom-park.netlify.app/
+### Deploy: https://e14-whalom-park.netlify.app/
 
-## Entity Relationship Diagram: https://dbdiagram.io/d/604170c7fcdcb6230b22acad
+### Entity Relationship Diagram: https://dbdiagram.io/d/604170c7fcdcb6230b22acad
 
-## Flow Chart: https://docs.google.com/presentation/d/1N4PUf0xh2PICwQ-KIUwIwhojXXq5QU3_ZF_BoFS-cOE/edit?usp=sharing
+### Flow Chart: https://docs.google.com/presentation/d/1N4PUf0xh2PICwQ-KIUwIwhojXXq5QU3_ZF_BoFS-cOE/edit?usp=sharing
 ### Requirements:
 * Complete Planning
     * Make sure to break down tickets into milestones, include an ERD and a Workflow Diagram of how you will tackle each part of the application
