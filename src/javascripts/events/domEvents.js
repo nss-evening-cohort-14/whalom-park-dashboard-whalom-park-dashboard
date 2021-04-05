@@ -164,7 +164,7 @@ const domEvents = () => {
       $('#formModal').modal('toggle');
     }
 
-    // CLICK EVENT FOR ADDING Ride FORM
+    // CLICK EVENT FOR ADDING STAFF FORM
     if (e.target.id.includes('add-staff-btn')) {
       createStaffForm();
     }
