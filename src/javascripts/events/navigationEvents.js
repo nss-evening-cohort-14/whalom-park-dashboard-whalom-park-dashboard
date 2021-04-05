@@ -12,21 +12,25 @@ import renderEvents from '../components/cards/events';
 import showVisitors from '../components/cards/visitors';
 
 const navigationEvents = () => {
-  // click event to show rides
-  document.querySelector('#rides-link').addEventListener('click', () => {
-    getRides().then((ridesArray) => createRides(ridesArray));
-  });
-
   // click event to show staff
   document.querySelector('#staff-link').addEventListener('click', () => {
     getStaff().then((staffArray) => createStaff(staffArray));
   });
 
+  // click event to show rides
+  document.querySelector('#rides-link').addEventListener('click', () => {
+    getRides().then((ridesArray) => createRides(ridesArray));
+  });
+
   // click event to show vendors
   document.querySelector('#vendors-link').addEventListener('click', () => {
-    document.querySelector('#header').innerHTML = '<h1>Vendors Coming Soon!</h1>';
-    document.querySelector('#display-area').innerHTML = '';
-    document.querySelector('#add-button').innerHTML = '';
+    getVendors().then((vendorArray) => {
+      if (vendorArray.length) {
+        renderVendors(vendorArray);
+      } else {
+        emptyVendors();
+      }
+    });
   });
 
   // click event to show visitors
@@ -43,17 +47,6 @@ const navigationEvents = () => {
   document.querySelector('#logout-button').addEventListener('click', () => {
     signOut();
     getRides().then((ridesArray) => createRides(ridesArray));
-  });
-
-  // GET VENDORS
-  document.querySelector('#vendors-link').addEventListener('click', () => {
-    getVendors().then((vendorArray) => {
-      if (vendorArray.length) {
-        renderVendors(vendorArray);
-      } else {
-        emptyVendors();
-      }
-    });
   });
 };
 
