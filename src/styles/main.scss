@@ -1,0 +1,44 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+body {
+  background-color: antiquewhite;
+  color: brown;
+  text-align: center;
+}
+
+.navbar-dark .navbar-brand {
+  max-width: 2%;
+  max-height: 2%;
+}
+
+#logout-button,
+#login-button {
+  margin-left: auto;
+}
+
+// .card-v {
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+//   align-items: flex-start;
+//   padding: 10px;
+// }
+
+// h5 {
+//   background: rgba(116, 116, 116, 0.75);
+//   border-top-left-radius: 21px;
+//   border-top-right-radius: 21px;
+// }
+
+#nameTitle {
+  background: rgba(116, 116, 116, 0.75);
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+}
+
+.card-body {
+padding-top: 0%;
+padding-right: 0%;
+padding-left: 0%;
+}
