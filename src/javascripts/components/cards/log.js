@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
-const showVisitors = (visitorArray) => {
+const showPerformance = (performanceArray) => {
   const isUserLoggedIn = firebase.auth().currentUser;
-  document.querySelector('#header').innerHTML = '<h1>Meet Our Visitors</h1>';
-  document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-visitor-btn">Add a Visitor</button>'}`;
-  document.querySelector('#display-area').innerHTML = '';
+  document.querySelector('#header').innerHTML = '<h1>Performance</h1>';
+  document.querySelector('#add-button').innerHTML = '';
+  document.querySelector('#display-area').innerHTML = '<h5>Visitor Tracking</h5><h5>Performance Charting</h5>';
 
-  visitorArray.forEach((card) => {
+  performanceArray.forEach((card) => {
     document.querySelector('#display-area').innerHTML += `<div class="card m-4" id="visitor-card--${card.visitorID_firebaseKey}" style="border-radius: 10px; background-color: #a52a2a; color: white;">
     <div id="card-body--${card.firebaseKey}" class="card-body" style="height: 400px; width: 350px; background-image: url('${card.visitorImageURL}'); border-radius: 10px; background-size: Cover; background-repeat: no-repeat;">
        <div id="nameTitle"> 
@@ -19,4 +19,4 @@ const showVisitors = (visitorArray) => {
   });
 };
 
-export default showVisitors;
+export default showPerformance;
