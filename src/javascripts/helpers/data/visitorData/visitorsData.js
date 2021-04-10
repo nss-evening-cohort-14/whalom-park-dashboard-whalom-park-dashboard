@@ -15,7 +15,7 @@ const addVisitor = (visitorObject) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/visitors.json`, visitorObject)
     .then((response) => {
       const body = { visitorID_firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/Visitors/${response.data.name}.json`, body)
+      axios.patch(`${dbUrl}/visitors/${response.data.name}.json`, body)
         .then(() => {
           getVisitors().then((visitorsArray) => resolve(visitorsArray));
         });
