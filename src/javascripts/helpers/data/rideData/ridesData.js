@@ -5,24 +5,24 @@ const dbUrl = firebaseConfig.databaseURL;
 
 // GET Rides
 const getRides = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/Rides.json`)
+  axios.get(`${dbUrl}/rides.json`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
 // GET SINGLE RIDES
 const getSingleRide = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/Rides/${firebaseKey}.json`)
+  axios.get(`${dbUrl}/rides/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
 
 // Add Rides
 const addRides = (ridesObject) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/Rides.json`, ridesObject)
+  axios.post(`${dbUrl}/rides.json`, ridesObject)
     .then((response) => {
       const body = { rideID_firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/Rides/${response.data.name}.json`, body)
+      axios.patch(`${dbUrl}/rides/${response.data.name}.json`, body)
         .then(() => {
           getRides().then((ridesArray) => resolve(ridesArray));
         });
@@ -31,14 +31,14 @@ const addRides = (ridesObject) => new Promise((resolve, reject) => {
 
 // DELETE Rides
 const deleteRides = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/Rides/${firebaseKey}.json`)
+  axios.delete(`${dbUrl}/rides/${firebaseKey}.json`)
     .then(() => getRides().then((ridesArray) => resolve(ridesArray)))
     .catch((error) => reject(error));
 });
 
 // UPDATE RIDES
 const updateRides = (firebaseKey, ridesObject) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/Rides/${firebaseKey}.json`, ridesObject)
+  axios.patch(`${dbUrl}/rides/${firebaseKey}.json`, ridesObject)
     .then(() => getRides()).then((ridesArray) => resolve(ridesArray))
     .catch((error) => reject(error));
 });
