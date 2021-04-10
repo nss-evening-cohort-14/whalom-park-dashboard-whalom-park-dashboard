@@ -190,7 +190,6 @@ const domEvents = () => {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Staff');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
-      $('#formModal').modal('toggle');
     }
 
     // // CLICK EVENT FOR EDITING Staff
