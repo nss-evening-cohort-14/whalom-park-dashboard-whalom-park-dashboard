@@ -1,6 +1,6 @@
 const createStaffForm = () => {
   document.querySelector('#modal-body').innerHTML = `
-    <form id="submit-board-form" class="mb-4">
+    <form id="submit-staff-form" class="mb-4">
       <div class="form-group">
         <label for="lblFistName">Staff First Name</label>
         <input type="text" class="form-control" id="inFistName" aria-describedby="boardFirstName" placeholder="Enter Staff Fist Name" required>

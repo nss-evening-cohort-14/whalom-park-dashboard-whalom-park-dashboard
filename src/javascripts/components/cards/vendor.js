@@ -20,7 +20,7 @@ const renderVendors = (venArray) => {
       ${isUserLoggedIn === null ? '' : `
       <p class="card-text bold">${item.vendorIsActive ? `<span class="badge badge-info product-badge"><i class="fa fa-bell" aria-hidden="true"></i> Active</span> ${item.vendorProduct}` : `${item.vendorProduct}`}</p>
       <button class="btn btn-outline-danger" id="delete-vendor--${item.visitorID_firebaseKey}" style="position: absolute; right:0; bottom: 0; background-color: #a52a2a; color: white; border: none;">🗑️</button>
-      <button class="btn" id="edit-vendor--${item.visitorID_firebaseKey}" style="position: absolute; left:0; bottom: 0; background-color: #a52a2a; color: white; border: none;" data-toggle="modal" data-target="#formModal">Edit Vendor</button>
+      <button class="btn" id="edit-vendor-btn--${item.vendorID_firebaseKey}" style="position: absolute; left:0; bottom: 0; background-color: #a52a2a; color: white; border: none;" data-toggle="modal" data-target="#formModal">Edit Vendor</button>
       `}
   </div>`;
   });

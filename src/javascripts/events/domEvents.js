@@ -194,7 +194,7 @@ const domEvents = () => {
     }
 
     // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF
-    if (e.target.id.includes('edit-staff')) {
+    if (e.target.id.includes('edit-staff-btn')) {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Staff');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));

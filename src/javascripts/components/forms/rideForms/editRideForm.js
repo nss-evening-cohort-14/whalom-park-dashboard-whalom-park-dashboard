@@ -3,7 +3,7 @@
 
 const editRideForm = (ridesObject) => {
   document.querySelector('#modal-body').innerHTML = `
-  <form id='edit-form' class='mb-4'>
+  <form id='edit-ride-form' class='mb-4'>
   <div class='form-group'>
   <label for='title'>Ride Title</label>
   <input type='text' class='form-control' id='title' aria-describedby='title' placeholder='Enter Ride Name' value='${ridesObject.rideName}' required>
