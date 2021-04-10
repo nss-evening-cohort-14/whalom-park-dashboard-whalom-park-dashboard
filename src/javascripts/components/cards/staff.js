@@ -15,15 +15,15 @@ const createStaff = (array) => {
     </div>
       ${isUserLoggedIn === null ? '' : `
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Default radio
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="seniorStaff" style="align-items: end">
+          <label class="form-check-label" for="seniorStaff">
+            Senior Staff
           </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-            Default checked radio
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="internStaff" checked style="align-items: end">
+          <label class="form-check-label" for="internStaff">
+            Intern Staff
           </label>
       </div>
       <button class="btn btn-outline-danger" id="delete-staff--${item.staffID_firebaseKey}" style="position: absolute; right:0;   bottom: 0; color: #b1bac4; border: none;">🗑️</button>

@@ -8,7 +8,7 @@
     "build": "webpack --mode production --module-bind js=babel-loader"
   },
   "keywords": [],
-  "author": "Mitchell Crumbley",
+  "author": "Hunter Juneau, Chris Meffley, Honey-Rae Swan, Matthew Gonzales",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.11.4",

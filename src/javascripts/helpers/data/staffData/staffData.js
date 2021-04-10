@@ -5,17 +5,17 @@ const dbUrl = firebaseConfig.databaseURL;
 
 // GET Staff
 const getStaff = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/Staff.json`)
+  axios.get(`${dbUrl}/staff.json`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
 // Add Staff
 const addStaff = (staffObject) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/Staff.json`, staffObject)
+  axios.post(`${dbUrl}/staff.json`, staffObject)
     .then((response) => {
       const body = { staffID_firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/Staff/${response.data.name}.json`, body)
+      axios.patch(`${dbUrl}/staff/${response.data.name}.json`, body)
         .then(() => {
           getStaff().then((staffArray) => resolve(staffArray));
         });
@@ -24,21 +24,21 @@ const addStaff = (staffObject) => new Promise((resolve, reject) => {
 
 // DELETE Staff
 const deleteStaff = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/Staff/${firebaseKey}.json`)
+  axios.delete(`${dbUrl}/staff/${firebaseKey}.json`)
     .then(() => getStaff().then((staffArray) => resolve(staffArray)))
     .catch((error) => reject(error));
 });
 
 // UPDATE STAFF
 const updateStaff = (firebaseKey, staffObject) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/Staff/${firebaseKey}.json`, staffObject)
+  axios.patch(`${dbUrl}/staff/${firebaseKey}.json`, staffObject)
     .then(() => getStaff()).then((staffArray) => resolve(staffArray))
     .catch((error) => reject(error));
 });
 
 // GET SINGLE STAFF
 const getSingleStaff = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/Staff/${firebaseKey}.json`)
+  axios.get(`${dbUrl}/staff/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
