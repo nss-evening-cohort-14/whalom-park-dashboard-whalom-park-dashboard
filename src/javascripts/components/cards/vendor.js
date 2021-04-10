@@ -6,7 +6,7 @@ const renderVendors = (venArray) => {
   Vendors</h1>`;
   document.querySelector('#add-button').innerHTML = `<div>
   ${isUserLoggedIn === null ? '' : `
-  '<button class="btn btn-outline-danger btn mb-4" id="add-vendor-btn">Add Vendor</button>'
+  '<button class="btn btn-outline-danger btn mb-4" id="add-vendor-btn" data-toggle="modal" data-target="#formModal">Add Vendor</button>'
   `}
   </div>`;
   document.querySelector('#display-area').innerHTML = '';

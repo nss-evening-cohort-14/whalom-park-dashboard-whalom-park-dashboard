@@ -4,7 +4,7 @@ const createStaff = (array) => {
   const isUserLoggedIn = firebase.auth().currentUser;
   document.querySelector('#header').innerHTML = `<h1>
   Staff</h1>`;
-  document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-staff-btn">Create Staff</button>'}`;
+  document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-staff-btn" data-toggle="modal" data-target="#formModal">Create Staff</button>'}`;
   document.querySelector('#display-area').innerHTML = '';
 
   array.forEach((item) => {
@@ -15,7 +15,7 @@ const createStaff = (array) => {
     </div>
       ${isUserLoggedIn === null ? '' : `
       <button class="btn btn-outline-danger" id="delete-staff--${item.staffID_firebaseKey}" style="position: absolute; right:0;   bottom: 0; background-color: #a52a2a; color: white; border: none;">🗑️</button>
-      <button class="btn" id="edit-staff--${item.staffID_firebaseKey}" style="position: absolute; left:0; bottom: 0; background-color: #a52a2a; color: white; border: none; "data-toggle="mo data-target="#formModal">Edit Staff</button>
+      <button class="btn" id="edit-staff--${item.staffID_firebaseKey}" style="position: absolute; left:0; bottom: 0; background-color: #a52a2a; color: white; border: none;" data-toggle="modal" data-target="#formModal">Edit Staff</button>
       `}
   </div>`;
   });

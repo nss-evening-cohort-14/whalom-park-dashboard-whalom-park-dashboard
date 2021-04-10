@@ -37,6 +37,7 @@ const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
     // CLICK EVENT FOR ADDING RIDE FORM
     if (e.target.id.includes('add-ride-btn')) {
+      formModal('Add Ride');
       createRideForm();
     }
 
@@ -48,6 +49,7 @@ const domEvents = () => {
         rideImageURL: document.querySelector('#image').value,
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
+      $('#formModal').modal('toggle');
     }
 
     // Delete Ride
@@ -84,6 +86,7 @@ const domEvents = () => {
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
     if (e.target.id.includes('add-vendor-btn')) {
+      formModal('Add Vendor');
       addVendorForm();
     }
 
@@ -98,6 +101,7 @@ const domEvents = () => {
         // staffID_firebaseKey: document.querySelector('#select-staff').value,
       };
       createVendor(vendorObj).then((vendors) => renderVendors(vendors));
+      $('#formModal').modal('toggle');
     }
 
     // CLICK EVENT FOR SHOWING MODAL FORM FOR VENDOR
@@ -125,6 +129,7 @@ const domEvents = () => {
     // VISITORS
     // CLICK EVENT FOR ADDING VISITOR FORM
     if (e.target.id.includes('add-visitor-btn')) {
+      formModal('Add Visitor');
       createVisitorForm();
     }
     // CLICK EVENT FOR ADDING VISITOR
@@ -136,6 +141,7 @@ const domEvents = () => {
         visitorImageURL: document.querySelector('#visitor-image').value
       };
       addVisitor(visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
+      $('#formModal').modal('toggle');
     }
     // CLICK EVENT TO DELETE VISITOR
     if (e.target.id.includes('delete-visitor')) {
@@ -166,6 +172,7 @@ const domEvents = () => {
 
     // CLICK EVENT FOR ADDING STAFF FORM
     if (e.target.id.includes('add-staff-btn')) {
+      formModal('Add Staff');
       createStaffForm();
     }
 
@@ -178,6 +185,7 @@ const domEvents = () => {
         staffImageURL: document.querySelector('#staffImage').value,
       };
       addStaff(staffObject).then((staffArray) => createStaff(staffArray));
+      $('#formModal').modal('toggle');
     }
     // Delete STAFF
     if (e.target.id.includes('delete-staff')) {
@@ -207,6 +215,7 @@ const domEvents = () => {
 
     // CLICK EVENT FOR ADDING EVENT FORM
     if (e.target.id.includes('add-event-btn')) {
+      formModal('Add Event');
       addEventForm();
     }
 
@@ -218,6 +227,7 @@ const domEvents = () => {
         eventImageURL: document.querySelector('#event-image').value,
       };
       createEvent(eventObject).then((eventsArray) => renderEvents(eventsArray));
+      $('#formModal').modal('toggle');
     }
 
     // DELETE EVENT

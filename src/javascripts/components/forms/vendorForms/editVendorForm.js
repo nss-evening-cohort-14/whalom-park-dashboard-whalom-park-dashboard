@@ -2,7 +2,7 @@
 
 const editVendorForm = (vendorObj) => {
   document.querySelector('#modal-body').innerHTML = `
-    <form id="edit-vendor-form" class="mb-4">
+    <form id="edit-form" class="mb-4">
       <div class="form-group">
         <label for="title">Vendor Name</label>
         <input type="text" class="form-control" id="vendor-name" aria-describedby="vendorName" placeholder="Enter Vendor Name" value="${vendorObj.vendorName}" required>

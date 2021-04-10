@@ -3,7 +3,7 @@ import firebase from 'firebase';
 const renderEvents = (eventArray) => {
   const isUserLoggedIn = firebase.auth().currentUser;
   document.querySelector('#header').innerHTML = '<h1> Events </h1>';
-  document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-event-btn">Add Event</button>'}`;
+  document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-event-btn" data-toggle="modal" data-target="#formModal">Add Event</button>'}`;
   document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
 
@@ -14,7 +14,7 @@ const renderEvents = (eventArray) => {
     <h5 class="card-title">${item.eventName}</h5>
       ${isUserLoggedIn === null ? '' : `
       <button class="btn btn-outline-danger" id="delete-event--${item.eventID_firebaseKey}" style="position: absolute; right:0; bottom: 0; background-color: #a52a2a; color: white; border: none;">🗑️</button>
-      <button class="btn" id="edit-event-btn--${item.eventID_firebaseKey}" style="position: absolute; left:0; bottom: 0; background-color: #a52a2a; color: white; border: none;" data-toggle="modal" data-target="#formModal">Edit Visitor</button>
+      <button class="btn" id="edit-event-btn--${item.eventID_firebaseKey}" style="position: absolute; left:0; bottom: 0; background-color: #a52a2a; color: white; border: none;" data-toggle="modal" data-target="#formModal">Edit Event</button>
       `}
   </div>`;
   });

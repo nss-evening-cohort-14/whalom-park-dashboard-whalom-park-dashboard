@@ -1,8 +1,5 @@
 const addEventForm = () => {
-  document.querySelector('#display-area').innerHTML = '';
-  document.querySelector('#add-button').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="submit-board-form" class="mb-4">
       <div class="form-group">
         <label for="title">Event Title</label>

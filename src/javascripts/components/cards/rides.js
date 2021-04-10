@@ -6,7 +6,7 @@ const createRides = (array) => {
   Rides</h1>`;
   document.querySelector('#add-button').innerHTML = `<div>
   ${isUserLoggedIn === null ? '' : `
-  '<button class="btn btn-outline-danger btn mb-4" id="add-ride-btn">Create Rides</button>'
+  '<button class="btn btn-outline-danger btn mb-4" id="add-ride-btn" data-toggle="modal" data-target="#formModal">Create Rides</button>'
   `}
   </div>`;
   document.querySelector('#display-area').innerHTML = '';
