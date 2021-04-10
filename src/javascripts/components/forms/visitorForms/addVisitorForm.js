@@ -9,7 +9,7 @@ const createVisitorForm = () => {
       <div class="form-group">
         <label for="image">Image URL</label>
         <input type="url" class="form-control" id="visitor-image" placeholder="Add an Image URL" required>
-        <button type="button" id="submit-visitor" class="btn btn-danger">Submit Visitor</button>
+        <button type="submit" id="submit-visitor" class="btn btn-danger">Submit Visitor</button>
       </div>`;
 };
 
