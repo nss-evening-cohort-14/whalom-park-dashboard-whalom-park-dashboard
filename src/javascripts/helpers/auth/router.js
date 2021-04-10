@@ -4,7 +4,6 @@ import loginButton from '../../components/buttons/loginButton';
 import logoutButton from '../../components/buttons/logoutButton';
 import domBuilder from '../../components/domBuilder';
 import navBar from '../../components/navBar';
-import domEvents from '../../events/domEvents';
 import hideCreate from '../../events/hideCreate';
 import navigationEvents from '../../events/navigationEvents';
 import startApp from '../../views/startApp';
@@ -23,7 +22,6 @@ const checkLoginStatus = () => {
       navBar();
       loginButton();
       navigationEvents();
-      domEvents();
       hideCreate();
     }
   });
