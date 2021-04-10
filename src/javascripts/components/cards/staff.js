@@ -15,13 +15,13 @@ const createStaff = (array) => {
     </div>
       ${isUserLoggedIn === null ? '' : `
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="seniorStaff" style="align-items: end">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="seniorStaff">
           <label class="form-check-label" for="seniorStaff">
             Senior Staff
           </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="internStaff" checked style="align-items: end">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="internStaff" checked>
           <label class="form-check-label" for="internStaff">
             Intern Staff
           </label>
