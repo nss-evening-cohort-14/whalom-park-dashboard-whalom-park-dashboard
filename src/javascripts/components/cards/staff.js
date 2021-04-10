@@ -14,8 +14,8 @@ const createStaff = (array) => {
     <h5 class="card-Staff-Name">${item.staffFirstName} ${item.staffLastName}</h5>
     </div>
       ${isUserLoggedIn === null ? '' : `
-      <button class="btn btn-outline-danger" id="delete-staff--${item.staffID_firebaseKey}" style="position: absolute; right:0;   bottom: 0; color:                     #b1bac4; border: none;">🗑️</button>
-      <button class="btn" id="edit-staff--${item.staffID_firebaseKey}" style="position: absolute; left:0; bottom: 0; color: #b1bac4;   border: none;"                     data-toggle="mo data-target="#formModal">Edit Staff</button>
+      <button class="btn btn-outline-danger" id="delete-staff--${item.staffID_firebaseKey}" style="position: absolute; right:0; bottom: 0; color: #b1bac4; border: none;">🗑️</button>
+      <button class="btn" id="edit-staff--${item.staffID_firebaseKey}" style="position: absolute; left:0; bottom: 0; color: #b1bac4; border: none;" data-toggle="modal" data-target="#formModal">Edit Staff</button>
       `}
   </div>`;
   });

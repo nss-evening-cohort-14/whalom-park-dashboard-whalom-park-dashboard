@@ -64,3 +64,32 @@ Whalom Park, based in Lunenburg, Massachusetts, is the 13th oldest amusement par
 * As a user, I should be able to add an Event.
 * As a user, I should be able to edit an Event.
 * As a user, I should be able to delete an Event.
+
+## Week 2
+
+### Week 2 Requirements:
+* Assign Staff to Vendors and Rides
+* Charge Visitors for Vendors and Rides
+* Visitor Tracking System
+* Stretch goal: Charting
+
+### Week 2 User Stories
+
+#### Assigning Staff
+* As a user, I should be able to assign a Staff member to a Ride
+* As a user, I should be able to assign a Staff member to a Vendor
+* For a ride to be open, it needs two staff members assigned
+* There should be two levels of Staff, (Senior and Intern)
+
+#### Charging visitors
+* As a user, there should be a button that loops over the visitors and makes them buy something
+* A visitor will choose a random ride or vendor
+* As a user, I should be able to charge Visitors when they use a Ride or Vendor
+
+#### Visitor Tracking System
+* As a user, I want to know what the visitors are doing in my park
+* When a visitor buys something, keep a log of that in a Visitor Log
+
+#### Stretch Goal: Charting
+* As a user, I want to see how much money I'm making from each vendor and ride
+* I should see a chart using amCharts to display income information
