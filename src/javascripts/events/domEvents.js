@@ -79,9 +79,9 @@ const domEvents = () => {
     }
 
     // DELETE VENDOR
-    if (e.target.id.includes('delete-vendor')) {
+    if (e.target.id.includes('delete-vendor-btn')) {
       const vendorId = e.target.id.split('--')[1];
-      deleteVendor(vendorId).then((vendors) => renderVendors(vendors));
+      deleteVendor(vendorId).then((vendorsArray) => renderVendors(vendorsArray));
     }
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
