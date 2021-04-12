@@ -37,6 +37,7 @@ const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
     // CLICK EVENT FOR ADDING RIDE FORM
     if (e.target.id.includes('add-ride-btn')) {
+      formModal('Add Ride');
       createRideForm();
     }
 
@@ -54,13 +55,14 @@ const domEvents = () => {
     }
 
     // DELETE VENDOR
-    if (e.target.id.includes('delete-vendor')) {
+    if (e.target.id.includes('delete-vendor-btn')) {
       const vendorId = e.target.id.split('--')[1];
-      deleteVendor(vendorId).then((vendors) => renderVendors(vendors));
+      deleteVendor(vendorId).then((vendorsArray) => renderVendors(vendorsArray));
     }
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING A VENDOR
     if (e.target.id.includes('add-vendor-btn')) {
+      formModal('Add Vendor');
       addVendorForm();
     }
 
@@ -74,31 +76,18 @@ const domEvents = () => {
     // VISITORS
     // CLICK EVENT FOR ADDING VISITOR FORM
     if (e.target.id.includes('add-visitor-btn')) {
+      formModal('Add Visitor');
       createVisitorForm();
     }
-
     // CLICK EVENT TO DELETE VISITOR
     if (e.target.id.includes('delete-visitor')) {
       const firebaseKey = e.target.id.split('--')[1];
       deleteVisitor(firebaseKey).then((visitorsArray) => showVisitors(visitorsArray));
     }
 
-    // CLICK EVENT TO UPDATE VISITOR
-    if (e.target.id.includes('update-visitor')) {
-      e.preventDefault();
-      const firebaseKey = e.target.id.split('--')[1];
-      const visitorObject = {
-        visitorFirstName: document.querySelector('#visitor-fn').value,
-        visitorLastName: document.querySelector('#visitor-ln').value,
-        visitorImageURL: document.querySelector('#visitor-image').value
-      };
-      updateVisitor(firebaseKey, visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
-
-      $('#formModal').modal('toggle');
-    }
-
     // CLICK EVENT FOR ADDING STAFF FORM
     if (e.target.id.includes('add-staff-btn')) {
+      formModal('Add Staff');
       createStaffForm();
     }
 
@@ -109,7 +98,7 @@ const domEvents = () => {
     }
 
     // CLICK EVENT FOR SHOWING MODAL TO EDIT STAFF
-    if (e.target.id.includes('edit-staff')) {
+    if (e.target.id.includes('edit-staff-btn')) {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Staff');
       getSingleStaff(firebaseKey).then((staffObject) => editStaffForm(staffObject));
@@ -117,6 +106,7 @@ const domEvents = () => {
 
     // CLICK EVENT FOR ADDING EVENT FORM
     if (e.target.id.includes('add-event-btn')) {
+      formModal('Add Event');
       addEventForm();
     }
 
@@ -124,6 +114,13 @@ const domEvents = () => {
     if (e.target.id.includes('delete-event')) {
       const firebaseKey = e.target.id.split('--')[1];
       deleteEvent(firebaseKey).then((eventsArray) => renderEvents(eventsArray));
+    }
+
+    // CLICK EVENT TO EDIT VISITOR
+    if (e.target.id.includes('edit-visitor')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      formModal('Edit Visitor');
+      getSingleVisitor(firebaseKey).then((visitorObject) => editVisitorForm(visitorObject));
     }
 
     // CLICK EVENT FOR SHOWING MODAL TO EDIT EVENT
@@ -145,6 +142,7 @@ const domEvents = () => {
         rideImageURL: document.querySelector('#image').value,
       };
       addRides(rideObject).then((ridesArray) => createRides(ridesArray));
+      $('#formModal').modal('toggle');
     }
 
     // CLICK EVENT FOR ADDING VISITOR
@@ -156,6 +154,7 @@ const domEvents = () => {
         visitorImageURL: document.querySelector('#visitor-image').value
       };
       addVisitor(visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
+      $('#formModal').modal('toggle');
     }
 
     // CLICK EVENT FOR SUBMITTING FORM FOR ADDING VENDOR
@@ -168,8 +167,22 @@ const domEvents = () => {
         vendorIsActive: document.querySelector('#vendor-active').checked,
       };
       createVendor(vendorObj).then((vendors) => renderVendors(vendors));
+      $('#formModal').modal('toggle');
     }
 
+    // CLICK EVENT TO UPDATE VISITOR
+    if (e.target.id.includes('update-visitor')) {
+      e.preventDefault();
+      const firebaseKey = e.target.id.split('--')[1];
+      const visitorObject = {
+        visitorFirstName: document.querySelector('#visitor-fn').value,
+        visitorLastName: document.querySelector('#visitor-ln').value,
+        visitorImageURL: document.querySelector('#visitor-image').value
+      };
+      updateVisitor(firebaseKey, visitorObject).then((visitorsArray) => showVisitors(visitorsArray));
+
+      $('#formModal').modal('toggle');
+    }
     // ADDING A STAFF
     if (e.target.id.includes('submit-staff-form')) {
       e.preventDefault();
@@ -179,6 +192,7 @@ const domEvents = () => {
         staffImageURL: document.querySelector('#staffImage').value,
       };
       addStaff(staffObject).then((staffArray) => createStaff(staffArray));
+      $('#formModal').modal('toggle');
     }
 
     // GET Info from Event Form
@@ -189,6 +203,7 @@ const domEvents = () => {
         eventImageURL: document.querySelector('#event-image').value,
       };
       createEvent(eventObject).then((eventsArray) => renderEvents(eventsArray));
+      $('#formModal').modal('toggle');
     }
 
     // EDIT LISTENERS
@@ -219,13 +234,6 @@ const domEvents = () => {
       };
       editVendor(firebaseKey, vendorObj).then((vendorArray) => renderVendors(vendorArray));
       $('#formModal').modal('toggle');
-    }
-
-    // CLICK EVENT TO EDIT VISITOR
-    if (e.target.id.includes('edit-visitor')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      formModal('Edit Visitor');
-      getSingleVisitor(firebaseKey).then((visitorObject) => editVisitorForm(visitorObject));
     }
 
     // // CLICK EVENT FOR EDITING Staff

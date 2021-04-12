@@ -1,6 +1,5 @@
 const createVisitorForm = () => {
-  document.querySelector('#add-button').innerHTML = '';
-  document.querySelector('#display-area').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="submit-visitor-form" class="mb-4">
       <div class="form-group">
         <label for="visitor-title">Add a Visitor</label>

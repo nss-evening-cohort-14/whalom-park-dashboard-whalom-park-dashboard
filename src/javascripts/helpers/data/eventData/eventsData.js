@@ -26,8 +26,8 @@ export const deleteEvent = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // CREATE EVENT
-export const createEvent = (eventObj) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/events.json`, eventObj)
+export const createEvent = (eventObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/events.json`, eventObject)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/events/${response.data.name}.json`, body)
@@ -38,8 +38,8 @@ export const createEvent = (eventObj) => new Promise((resolve, reject) => {
 });
 
 // EDIT EVENT
-export const editEvent = (firebaseKey, eventObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/events/${firebaseKey}.json`, eventObj)
+export const editEvent = (firebaseKey, eventObject) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/events/${firebaseKey}.json`, eventObject)
     .then(() => getEvents())
     .then((eventsArray) => resolve(eventsArray))
     .catch((error) => reject(error));
