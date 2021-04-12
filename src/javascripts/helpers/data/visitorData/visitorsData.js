@@ -43,6 +43,11 @@ const updateVisitor = (firebaseKey, visitorObject) => new Promise((resolve, reje
     .catch((error) => reject(error));
 });
 
+// SPENDING MONEY
+const spendingMoney = () => {
+  getVisitors().then((visitorsArray) => console.warn(visitorsArray));
+};
+
 export {
-  getVisitors, addVisitor, deleteVisitor, updateVisitor, getSingleVisitor
+  getVisitors, addVisitor, deleteVisitor, updateVisitor, getSingleVisitor, spendingMoney
 };

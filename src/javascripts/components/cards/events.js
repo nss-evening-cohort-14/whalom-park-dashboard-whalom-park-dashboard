@@ -4,6 +4,7 @@ const renderEvents = (eventArray) => {
   const isUserLoggedIn = firebase.auth().currentUser;
   document.querySelector('#header').innerHTML = '<h1> Events </h1>';
   document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-event-btn" data-toggle="modal" data-target="#formModal">Add Event</button>'}`;
+  document.querySelector('#pass-time-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
 

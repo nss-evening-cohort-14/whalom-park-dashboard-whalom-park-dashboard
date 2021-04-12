@@ -9,6 +9,7 @@ const renderVendors = (vendorArray) => {
   '<button class="btn btn-outline-danger btn mb-4" id="add-vendor-btn" data-toggle="modal" data-target="#formModal">Add Vendor</button>'
   `}
   </div>`;
+  document.querySelector('#pass-time-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
 

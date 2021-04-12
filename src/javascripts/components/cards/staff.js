@@ -5,6 +5,7 @@ const createStaff = (array) => {
   document.querySelector('#header').innerHTML = `<h1>
   Staff</h1>`;
   document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-staff-btn" data-toggle="modal" data-target="#formModal">Create Staff</button>'}`;
+  document.querySelector('#pass-time-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = '';
 
   array.forEach((item) => {

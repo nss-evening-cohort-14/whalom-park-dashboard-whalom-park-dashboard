@@ -20,7 +20,7 @@ import {
 } from '../helpers/data/rideData/ridesData';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import {
-  addVisitor, deleteVisitor, getSingleVisitor, updateVisitor
+  addVisitor, deleteVisitor, getSingleVisitor, updateVisitor, spendingMoney
 } from '../helpers/data/visitorData/visitorsData';
 import editVisitorForm from '../components/forms/visitorForms/editVisitorForm';
 import editStaffForm from '../components/forms/staffForms/editStaffForm';
@@ -128,6 +128,12 @@ const domEvents = () => {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Event');
       getSingleEvent(firebaseKey).then((eventObject) => editEventForm(eventObject));
+    }
+
+    // CLICK EVENT FOR PASSING TIME AT THE PARK (I.E. VISITOR'S SPEND MONEY)
+    if (e.target.id.includes('pass-time-btn')) {
+      console.warn('Hello');
+      spendingMoney();
     }
   });
 

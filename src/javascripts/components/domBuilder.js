@@ -4,6 +4,7 @@ const domBuilder = () => {
       <div id="form-container"></div>
       <div id="header"></div>
       <div id="add-button"></div>
+      <div id="pass-time-button"></div>
       <div id="display-section" class="d-flex flex-row flex-wrap justify-content-center">
         <div id="display-area" class="d-flex flex-row flex-wrap justify-content-center"></div>
       </div>

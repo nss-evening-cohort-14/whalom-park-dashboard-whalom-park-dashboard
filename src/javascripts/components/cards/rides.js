@@ -9,6 +9,7 @@ const createRides = (array) => {
   '<button class="btn btn-outline-danger btn mb-4" id="add-ride-btn" data-toggle="modal" data-target="#formModal">Create Rides</button>'
   `}
   </div>`;
+  document.querySelector('#pass-time-button').innerHTML = '';
   document.querySelector('#display-area').innerHTML = '';
 
   array.forEach((item) => {
