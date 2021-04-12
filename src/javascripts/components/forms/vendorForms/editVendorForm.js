@@ -2,7 +2,7 @@
 
 const editVendorForm = (vendorObj) => {
   document.querySelector('#modal-body').innerHTML = `
-    <form id="edit-vendor-form" class="mb-4">
+    <form id="update-vendor--${vendorObj.vendorID_firebaseKey}" class="mb-4">
       <div class="form-group">
         <label for="title">Vendor Name</label>
         <input type="text" class="form-control" id="vendor-name" aria-describedby="vendorName" placeholder="Enter Vendor Name" value="${vendorObj.vendorName}" required>
@@ -19,7 +19,7 @@ const editVendorForm = (vendorObj) => {
         <input type="checkbox" class="form-check-input" id="vendor-active" ${vendorObj.vendorIsActive && 'checked'}>
         <label class="form-check-label" for="active">vendorIsActive?</label>
       </div>
-      <button type="submit" id="update-vendor--${vendorObj.vendorID_firebaseKey}" class="btn btn-success">Update Vendor</button>
+      <button type="submit" class="btn btn-success">Update Vendor</button>
     </form>`;
   // selectStaff(vendorObj);
 };

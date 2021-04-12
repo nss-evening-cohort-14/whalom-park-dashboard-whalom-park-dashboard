@@ -1,6 +1,5 @@
 const createVisitorForm = () => {
-  document.querySelector('#add-button').innerHTML = '';
-  document.querySelector('#display-area').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="submit-visitor-form" class="mb-4">
       <div class="form-group">
         <label for="visitor-title">Add a Visitor</label>
@@ -10,7 +9,7 @@ const createVisitorForm = () => {
       <div class="form-group">
         <label for="image">Image URL</label>
         <input type="url" class="form-control" id="visitor-image" placeholder="Add an Image URL" required>
-        <button type="button" id="submit-visitor" class="btn btn-danger">Submit Visitor</button>
+        <button type="submit" id="submit-visitor" class="btn btn-danger">Submit Visitor</button>
       </div>`;
 };
 
