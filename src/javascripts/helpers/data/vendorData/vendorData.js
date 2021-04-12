@@ -14,15 +14,15 @@ export const getVendors = () => new Promise((resolve, reject) => {
 });
 
 // GET SINGLE VENDOR
-export const getSingleVendor = (vendorID_firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/vendors/${vendorID_firebaseKey}.json`)
+export const getSingleVendor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vendors/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
 
 // DELETE VENDOR
-export const deleteVendor = (vendorID_firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/vendors/${vendorID_firebaseKey}.json`)
+export const deleteVendor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/vendors/${firebaseKey}.json`)
     .then(() => getVendors().then((vendorsArray) => resolve(vendorsArray)))
     .catch((error) => reject(error));
 });
@@ -40,8 +40,8 @@ export const createVendor = (vendorObj) => new Promise((resolve, reject) => {
 });
 
 // EDIT VENDOR
-export const editVendor = (vendorID_firebaseKey, vendorObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/vendors/${vendorID_firebaseKey}.json`, vendorObj)
+export const editVendor = (firebaseKey, vendorObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/vendors/${firebaseKey}.json`, vendorObj)
     .then(() => getVendors())
     .then((vendorsArray) => resolve(vendorsArray))
     .catch((error) => reject(error));

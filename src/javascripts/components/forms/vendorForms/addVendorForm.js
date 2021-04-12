@@ -1,9 +1,7 @@
 // import selectStaff from '../selectStaff';
 
 const addVendorForm = () => {
-  document.querySelector('#display-area').innerHTML = '';
-  document.querySelector('#add-button').innerHTML = '';
-  document.querySelector('#form-container').innerHTML = `
+  document.querySelector('#modal-body').innerHTML = `
     <form id="submit-vendor-form" class="mb-4">
       <div class="mb-3">
         <label for="title" class="form-label">Vendor Name</label>
