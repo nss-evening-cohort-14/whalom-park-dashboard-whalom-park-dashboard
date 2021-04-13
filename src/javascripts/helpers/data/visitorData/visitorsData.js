@@ -45,7 +45,18 @@ const updateVisitor = (firebaseKey, visitorObject) => new Promise((resolve, reje
 
 // SPENDING MONEY
 const spendingMoney = () => {
-  getVisitors().then((visitorsArray) => console.warn(visitorsArray));
+  getVisitors().then((visitorsArray) => {
+    // ASSIGN ACTIVITY
+    const activities = ['ride', 'vendor', 'neither'];
+    const random = () => Math.floor(Math.random() * activities.length);
+    visitorsArray.forEach((visitor) => {
+      const object = {
+        name: visitor.visitorFirstName,
+        activity: activities[random()]
+      };
+      console.warn(object);
+    });
+  });
 };
 
 export {

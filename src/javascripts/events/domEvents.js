@@ -132,7 +132,6 @@ const domEvents = () => {
 
     // CLICK EVENT FOR PASSING TIME AT THE PARK (I.E. VISITOR'S SPEND MONEY)
     if (e.target.id.includes('pass-time-btn')) {
-      console.warn('Hello');
       spendingMoney();
     }
   });
