@@ -1,7 +1,6 @@
 {
   "-MVsScuJ2ANljkeRe2pn" : {
     "price" : 6.5,
-    "staffID_firebaseKey" : "-MVsSCUnpcvsuC__YR3A",
     "vendorIdFirebaseKey" : "-MVsScuJ2ANljkeRe2pn",
     "vendorImageURL" : "http://www.cokatocorncarnival.com/wp-content/uploads/2018/04/vendors.jpg",
     "vendorIsActive" : true,
@@ -10,7 +9,6 @@
   },
   "-MVsScuKTv1tecAdUwna" : {
     "price" : 8.5,
-    "staffIdFirebaseKey" : "-MVsSCUpqTQitM38mQA1",
     "vendorIdFirebaseKey" : "-MVsScuKTv1tecAdUwna",
     "vendorImageURL" : "https://photos.smugmug.com/Portfolio/Austin-Gallery/i-Zw7mWH8/4/53ea34fe/L/austin-rodeo-carnival-food-vendors-L.jpg",
     "vendorIsActive" : true,
@@ -19,7 +17,6 @@
   },
   "-MVsScuLUktQRc2WHpsG" : {
     "price" : 9.5,
-    "staffID_firebaseKey" : "-MVsSCUqJ29fIS7bXDEU",
     "vendorIdFirebaseKey" : "-MVsScuLUktQRc2WHpsG",
     "vendorImageURL" : "https://bloximages.newyork1.vip.townnews.com/loganbanner.com/content/tncms/assets/v3/editorial/d/3d/d3d2785e-9958-11e9-8fd7-4385ffcaaea1/5d15902025c0b.image.jpg?resize=1200%2C800",
     "vendorIsActive" : false,
@@ -28,7 +25,6 @@
   },
   "-MVsScuMrjXHv_YoXrM6" : {
     "price" : 10,
-    "staffID_firebaseKey" : "-MVsSCUskf1kRs8EDV9m",
     "vendorIdFirebaseKey" : "-MVsScuMrjXHv_YoXrM6",
     "vendorImageURL" : "https://www.briarfest.com/images/food-vendor-300.jpg",
     "vendorIsActive" : true,
@@ -37,7 +33,6 @@
   },
   "-MVsScuNrXhlHEH2d1JZ" : {
     "price" : 9.5,
-    "staffID_firebaseKey" : "-MVsSCUtYpgGQCnfFiDI",
     "vendorIdFirebaseKey" : "-MVsScuNrXhlHEH2d1JZ",
     "vendorImageURL" : "http://www.dodgecountyfairgrounds.com/wp-content/uploads/2013/03/slush-factory-fair-food-vendor.jpg",
     "vendorIsActive" : false,
@@ -46,7 +41,6 @@
   },
   "-MVsScuOFVpaOQFVC4NI" : {
     "price" : 8.5,
-    "staffID_firebaseKey" : "-MVsSCUv68swhTt98xCz",
     "vendorIdFirebaseKey" : "-MVsScuOFVpaOQFVC4NI",
     "vendorImageURL" : "https://thumbs.dreamstime.com/b/variety-carnival-food-vendors-coquitlam-bc-canada-april-coquitlam-bc-canada-39859399.jpg",
     "vendorIsActive" : true,
@@ -55,7 +49,6 @@
   },
   "-MVsScuPxeUHBy5rwfMa" : {
     "price" : 9,
-    "staffID_firebaseKey" : "-MVsSCUwlEJ49SZcupj6",
     "vendorIdFirebaseKey" : "-MVsScuPxeUHBy5rwfMa",
     "vendorImageURL" : "http://www.armstrongshows.com/food/corndog.jpg",
     "vendorIsActive" : false,
@@ -64,7 +57,6 @@
   },
   "-MVsScuQ42g4NOT3F526" : {
     "price" : 10.5,
-    "staffID_firebaseKey" : "-MVsSCUxC0HBDpDQ6ZAV",
     "vendorIdFirebaseKey" : "-MVsScuQ42g4NOT3F526",
     "vendorImageURL" : "https://previews.123rf.com/images/asiastock/asiastock1801/asiastock180100073/94278135-taipei-taiwan-may-20-street-food-vendors-in-the-famous-shilin-night-market-a-popular-travel-destinat.jpg",
     "vendorIsActive" : false,
@@ -73,7 +65,6 @@
   },
   "-MVsScuRQ2PcBOBiJLX5" : {
     "price" : 11,
-    "staffID_firebaseKey" : "-MVsSCUzbcwpfRl-khpD",
     "vendorIdFirebaseKey" : "-MVsScuRQ2PcBOBiJLX5",
     "vendorImageURL" : "https://cdn.winsightmedia.com/platform/files/public/2019-08/background/BigIdea-FoodTrucks_1567012134.jpg?OfywLGIwsXh_Js8HBLe_Brl4n01sMJdV",
     "vendorIsActive" : false,
@@ -82,7 +73,6 @@
   },
   "-MVsScuSrSShdS1V1YDF" : {
     "price" : 10.5,
-    "staffID_firebaseKey" : "-MVsSCV-i7KCbsP5UqM5",
     "vendorIdFirebaseKey" : "-MVsScuSrSShdS1V1YDF",
     "vendorImageURL" : "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2018/12/mcdonalds-drive-through-restaurant.jpg?fit=1200%2C879&ssl=1 ",
     "vendorIsActive" : false,
