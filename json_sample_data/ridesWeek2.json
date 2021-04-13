@@ -4,69 +4,59 @@
     "rideIdFirebaseKey" : "-MVsTFKW960lg95a0akh",
     "rideImageURL" : "https://funspotamericaatlanta.com/wp-content/uploads/2018/06/Ferris-Wheel-5.jpg",
     "rideName" : "Ferris Wheel",
-    "staffID_firebaseKey" : "-MVsSCUnpcvsuC__YR3A"
   },
   "-MVsTFKXO4fszW8mVark" : {
     "price" : 4,
     "rideIdFirebaseKey" : "-MVsTFKXO4fszW8mVark",
     "rideImageURL" : "https://cache.undercovertourist.com/blog/2016/09/WDWs-Mad-Tea-Party.jpg",
     "rideName" : "TeaCups",
-    "staffID_firebaseKey" : "-MVsSCUpqTQitM38mQA1"
   },
   "-MVsTFKYpujS7glm-zLq" : {
     "price" : 4.5,
     "rideIdFirebaseKey" : "-MVsTFKYpujS7glm-zLq",
     "rideImageURL" : "https://variety.com/wp-content/uploads/2019/04/steampunkvr_scooter_action2.jpeg?w=681&h=383&crop=1",
     "rideName" : "Bumper Cars",
-    "staffID_firebaseKey" : "-MVsSCUqJ29fIS7bXDEU"
   },
   "-MVsTFKZPLD1HqkwuEtS" : {
     "price" : 5.5,
     "rideIdFirebaseKey" : "-MVsTFKZPLD1HqkwuEtS",
     "rideImageURL" : "https://purenintendo.com/wp-content/uploads/2015/03/SFMM_Goliath_02-1024x768.jpg",
     "rideName" : "The Goliath",
-    "staffID_firebaseKey" : "-MVsSCUskf1kRs8EDV9m"
   },
   "-MVsTFK_D1oEWcF06NwE" : {
     "price" : 4,
     "rideIdFirebaseKey" : "-MVsTFK_D1oEWcF06NwE",
     "rideImageURL" : "https://i.ytimg.com/vi/-7RxCgEJP4Y/maxresdefault.jpg",
     "rideName" : "Superman Flight",
-    "staffID_firebaseKey" : "-MVsSCUtYpgGQCnfFiDI"
   },
   "-MVsTFKadDwI3fczKUlc" : {
     "price" : 4.5,
     "rideIdFirebaseKey" : "-MVsTFKadDwI3fczKUlc",
     "rideImageURL" : "https://www.reformation21.org/sites/default/files/images/mos/housewife/dozerBull.png",
     "rideName" : "The Mechanical Bull",
-    "staffID_firebaseKey" : "-MVsSCUv68swhTt98xCz"
   },
   "-MVsTFKbHGze8SVMAMuo" : {
     "price" : 5.5,
     "rideIdFirebaseKey" : "-MVsTFKbHGze8SVMAMuo",
     "rideImageURL" : "https://www.interlink-lg.com/wp-content/uploads/2018/10/interlink-log-flume-water-ride-denmark.jpg",
     "rideName" : "The Log Flume",
-    "staffID_firebaseKey" : "-MVsSCUwlEJ49SZcupj6"
   },
   "-MVsTFKc1AyQb_WoedxR" : {
     "price" : 5.5,
     "rideIdFirebaseKey" : "-MVsTFKc1AyQb_WoedxR",
     "rideImageURL" : "https://cdn-cloudfront.cfauthx.com/binaries/content/gallery/kings-island/blogs/2019/august/droptower1400.png",
     "rideName" : "The Drop Tower",
-    "staffID_firebaseKey" : "-MVsSCUxC0HBDpDQ6ZAV"
   },
   "-MVsTFKdczY9uc4O5Ozu" : {
     "price" : 6,
     "rideIdFirebaseKey" : "-MVsTFKdczY9uc4O5Ozu",
     "rideImageURL" : "https://recruiterbox.com/wp-content/uploads/2015/08/games3.jpg",
     "rideName" : "Carnival Games",
-    "staffID_firebaseKey" : "-MVsSCUzbcwpfRl-khpD"
   },
   "-MVsTFKeF72xCv_tc7A5" : {
     "price" : 6,
     "rideIdFirebaseKey" : "-MVsTFKeF72xCv_tc7A5",
     "rideImageURL" : "https://stratescarnivalcompany.com/sites/default/files/styles/attraction-slider/public/attr/Double-Carousel.jpg?itok=V8pfB2jh",
     "rideName" : "Merry Go Round",
-    "staffID_firebaseKey" : "-MVsSCV-i7KCbsP5UqM5"
   }
 }
