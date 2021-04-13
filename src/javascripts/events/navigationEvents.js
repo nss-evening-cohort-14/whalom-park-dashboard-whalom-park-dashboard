@@ -10,6 +10,7 @@ import { getVisitors } from '../helpers/data/visitorData/visitorsData';
 import { getEvents } from '../helpers/data/eventData/eventsData';
 import renderEvents from '../components/cards/events';
 import showVisitors from '../components/cards/visitors';
+import showPerformance from '../components/cards/log';
 
 const navigationEvents = () => {
   // click event to show staff
@@ -41,6 +42,11 @@ const navigationEvents = () => {
   // click event to show events
   document.querySelector('#events-link').addEventListener('click', () => {
     getEvents().then((eventsArray) => renderEvents(eventsArray));
+  });
+
+  // click event to show logs and charts
+  document.querySelector('#performance-link').addEventListener('click', () => {
+    showPerformance();
   });
 
   // LOGOUT BUTTON
