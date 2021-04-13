@@ -10,7 +10,7 @@ Whalom Park, based in Lunenburg, Massachusetts, is the 13th oldest amusement par
 
 ### Deploy: https://e14-whalom-park.netlify.app/
 
-### Entity Relationship Diagram: https://dbdiagram.io/d/604170c7fcdcb6230b22acad
+### Entity Relationship Diagram: https://dbdiagram.io/d/606d049decb54e10c33f0196
 
 ### Flow Chart: https://docs.google.com/presentation/d/1N4PUf0xh2PICwQ-KIUwIwhojXXq5QU3_ZF_BoFS-cOE/edit?usp=sharing
 ### Requirements:
