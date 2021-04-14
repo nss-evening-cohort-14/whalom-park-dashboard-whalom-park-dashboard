@@ -1,5 +1,7 @@
 import axios from 'axios';
 import firebaseConfig from '../../auth/apiKeys';
+import { getRides } from '../rideData/ridesData';
+import { getVendors } from '../vendorData/vendorData';
 
 const dbUrl = firebaseConfig.databaseURL;
 
@@ -43,18 +45,47 @@ const updateVisitor = (firebaseKey, visitorObject) => new Promise((resolve, reje
     .catch((error) => reject(error));
 });
 
+// MASTER RIDES AND VENDORS LIST
+const ridesAndVendors = () => new Promise((resolve, reject) => {
+  Promise.all([getRides(), getVendors()])
+    .then(([rides, vendors]) => {
+      // BUILD ARRAY OF RIDES AND VENDORS TO CHOOSE FROM
+      const ridesAndVendorsArray = [];
+      rides.forEach((ride) => {
+        const object = {
+          earnings: ride.price,
+          event: ride.rideName
+        };
+        ridesAndVendorsArray.push(object);
+      });
+      vendors.forEach((vendor) => {
+        const object = {
+          earnings: vendor.price,
+          event: vendor.vendorName
+        };
+        ridesAndVendorsArray.push(object);
+      });
+      resolve(ridesAndVendorsArray);
+    })
+    .catch((error) => reject(error));
+});
+
 // SPENDING MONEY
 const spendingMoney = () => {
-  getVisitors().then((visitorsArray) => {
-    // ASSIGN ACTIVITY
-    const activities = ['ride', 'vendor', 'neither'];
-    const random = () => Math.floor(Math.random() * activities.length);
-    visitorsArray.forEach((visitor) => {
-      const object = {
-        name: visitor.visitorFirstName,
-        activity: activities[random()]
-      };
-      console.warn(object);
+  ridesAndVendors().then((resultsArray) => {
+    // (B) GET ALL VISITORS
+    const logArray = [];
+    getVisitors().then((visitorsArray) => {
+    // START BUILDING LOG
+      visitorsArray.forEach((visitor) => {
+        const randomEvent = resultsArray[Math.floor(Math.random() * resultsArray.length)];
+        const object = {
+          name: visitor.visitorFirstName,
+          ...randomEvent
+        };
+        logArray.push(object);
+      });
+      console.warn(logArray);
     });
   });
 };

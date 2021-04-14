@@ -132,6 +132,16 @@ const domEvents = () => {
 
     // CLICK EVENT FOR PASSING TIME AT THE PARK (I.E. VISITOR'S SPEND MONEY)
     if (e.target.id.includes('pass-time-btn')) {
+      // getRides().then((rides) => {
+      //   const randomRide = rides[Math.floor(Math.random() * rides.length)];
+      //   console.warn(randomRide);
+      //   spendingMoney(randomRide);
+      // });
+      // getVendors().then((vendors) => {
+      //   const randomVendor = vendors[Math.floor(Math.random() * vendors.length)];
+      //   console.warn(randomVendor);
+      //   spendingMoney(randomVendor);
+      // });
       spendingMoney();
     }
   });
