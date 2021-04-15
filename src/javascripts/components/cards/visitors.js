@@ -4,8 +4,7 @@ const showVisitors = (visitorArray) => {
   const isUserLoggedIn = firebase.auth().currentUser;
   document.querySelector('#header').innerHTML = '<h1>Meet Our Visitors</h1>';
   document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-visitor-btn" data-toggle="modal" data-target="#formModal">Add a Visitor</button>'}`;
-  document.querySelector('#add-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="add-visitor-btn" data-toggle="modal" data-target="#formModal">Add a Visitor</button>'}`;
-  document.querySelector('#pass-time-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="pass-time-btn">Pass Time At The Park (30min.)</button>'}`;
+  document.querySelector('#pass-time-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="pass-time-btn" data-toggle="modal" data-target="#formModal">Pass Time At The Park</button>'}`;
   document.querySelector('#display-area').innerHTML = '';
 
   visitorArray.forEach((card) => {

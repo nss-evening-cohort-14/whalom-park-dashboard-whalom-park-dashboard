@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../../auth/apiKeys';
+import addLog from '../logData';
 import { getRides } from '../rideData/ridesData';
 import { getVendors } from '../vendorData/vendorData';
 
@@ -80,12 +81,14 @@ const spendingMoney = () => {
       visitorsArray.forEach((visitor) => {
         const randomEvent = resultsArray[Math.floor(Math.random() * resultsArray.length)];
         const object = {
-          name: visitor.visitorFirstName,
-          ...randomEvent
+          visitor: visitor.visitorFirstName,
+          ...randomEvent,
+          timestamp: new Date()
         };
         logArray.push(object);
       });
-      console.warn(logArray);
+      // (C) POST LOG TO FIREBASE
+      addLog(logArray);
     });
   });
 };
