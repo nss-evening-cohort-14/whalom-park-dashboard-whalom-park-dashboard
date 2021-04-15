@@ -9,6 +9,7 @@ const createRides = (array) => {
   '<button class="btn btn-outline-danger btn mb-4" id="add-ride-btn" data-toggle="modal" data-target="#formModal">Create Rides</button>'
   `}
   </div>`;
+  document.querySelector('#pass-time-button').innerHTML = `${isUserLoggedIn === null ? '' : '<button class="btn btn-outline-danger btn mb-4" id="pass-time-btn" data-toggle="modal" data-target="#formModal">Pass Time At The Park</button>'}`;
   document.querySelector('#display-area').innerHTML = '';
 
   array.forEach((item) => {
