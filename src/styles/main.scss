@@ -1,10 +1,10 @@
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 body {
   // background-color: antiquewhite;
-  background-image: url("https://artlogic-res.cloudinary.com/w_2560,h_1800,c_limit,f_auto,fl_lossy,q_60/artlogicstorage/jacksonfineart/images/view/1131a06cbafde027bd9bab31323d8c6ej.jpg");
-  background-repeat:no-repeat;
+  background-image: url('https://artlogic-res.cloudinary.com/w_2560,h_1800,c_limit,f_auto,fl_lossy,q_60/artlogicstorage/jacksonfineart/images/view/1131a06cbafde027bd9bab31323d8c6ej.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   color: brown;
   text-align: center;
@@ -41,7 +41,12 @@ body {
 }
 
 .card-body {
-padding-top: 0%;
-padding-right: 0%;
-padding-left: 0%;
+  padding-top: 0%;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+
+#chartContainer {
+  height: 600px;
+  background-color: white;
 }
