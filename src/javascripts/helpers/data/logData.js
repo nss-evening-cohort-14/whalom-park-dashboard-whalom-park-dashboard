@@ -62,4 +62,12 @@ const spendingMoney = () => {
 };
 // END SPENDINGMONEY(), WHICH CREATES LOGSARRAY AND POSTS TO FIREBASE
 
-export { addLog, spendingMoney };
+// GET LOGS
+const getLogs = () => new Promise((resolve, reject) => {
+  axios
+    .get(`${dbUrl}/log.json`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
+export { addLog, spendingMoney, getLogs };

@@ -13,6 +13,7 @@ const createStaff = (array) => {
     <div id="card-body--${item.staffID_firebaseKey}" class="card-body" style="height: 400px; width: 350px; background-image: url('${item.staffImageURL}'); border-radius: 10px; background-size: Cover; background-repeat: no-repeat;">
     <div id="nameTitle">  
     <h5 class="card-Staff-Name">${item.staffFirstName} ${item.staffLastName}</h5>
+    <p>${item.staffLevel}</p>
     </div>
       ${isUserLoggedIn === null ? '' : `
       <button class="btn btn-outline-danger" id="delete-staff--${item.staffID_firebaseKey}" style="position: absolute; right:0;   bottom: 0; background-color: #a52a2a; color: white; border: none;">🗑️</button>

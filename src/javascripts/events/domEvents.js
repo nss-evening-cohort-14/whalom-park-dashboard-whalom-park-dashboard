@@ -197,6 +197,7 @@ const domEvents = () => {
         staffFirstName: document.querySelector('#inFistName').value,
         staffLastName: document.querySelector('#inLastName').value,
         staffImageURL: document.querySelector('#staffImage').value,
+        staffLevel: document.querySelector('input[name="whatStaffLevel"]:checked').value,
       };
       addStaff(staffObject).then((staffArray) => createStaff(staffArray));
       $('#formModal').modal('toggle');
@@ -251,6 +252,7 @@ const domEvents = () => {
         staffFirstName: document.querySelector('#firstName').value,
         staffLastName: document.querySelector('#lastName').value,
         staffImageURL: document.querySelector('#image').value,
+        staffLevel: document.querySelector('input[name="whatStaffLevel"]:checked').value,
       };
       updateStaff(firebaseKey, staffObject).then((staffArray) => createStaff(staffArray));
       $('#formModal').modal('toggle');
