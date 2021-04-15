@@ -20,7 +20,7 @@ import {
 } from '../helpers/data/rideData/ridesData';
 import createVisitorForm from '../components/forms/visitorForms/addVisitorForm';
 import {
-  addVisitor, deleteVisitor, getSingleVisitor, updateVisitor, spendingMoney
+  addVisitor, deleteVisitor, getSingleVisitor, updateVisitor
 } from '../helpers/data/visitorData/visitorsData';
 import editVisitorForm from '../components/forms/visitorForms/editVisitorForm';
 import editStaffForm from '../components/forms/staffForms/editStaffForm';
@@ -32,6 +32,7 @@ import {
 import addEventForm from '../components/forms/eventForms/addEvent';
 import editEventForm from '../components/forms/eventForms/editEvent';
 import showVisitors from '../components/cards/visitors';
+import { spendingMoney } from '../helpers/data/logData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
