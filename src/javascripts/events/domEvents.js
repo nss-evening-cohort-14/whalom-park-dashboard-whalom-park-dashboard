@@ -32,6 +32,7 @@ import {
 import addEventForm from '../components/forms/eventForms/addEvent';
 import editEventForm from '../components/forms/eventForms/editEvent';
 import showVisitors from '../components/cards/visitors';
+import { spendingMoney } from '../helpers/data/logData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -128,6 +129,12 @@ const domEvents = () => {
       const firebaseKey = e.target.id.split('--')[1];
       formModal('Edit Event');
       getSingleEvent(firebaseKey).then((eventObject) => editEventForm(eventObject));
+    }
+
+    // CLICK EVENT FOR PASSING TIME AT THE PARK (I.E. VISITOR'S SPEND MONEY)
+    if (e.target.id.includes('pass-time-btn')) {
+      spendingMoney();
+      formModal("Our visitors have bought food and enjoyed our rides! Check the Performance page to monitor the park's earnings!");
     }
   });
 
