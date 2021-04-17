@@ -11,9 +11,13 @@ import { getEvents } from '../helpers/data/eventData/eventsData';
 import renderEvents from '../components/cards/events';
 import showVisitors from '../components/cards/visitors';
 import showPerformance from '../components/cards/log';
+import showHome from '../components/cards/home';
 
 const navigationEvents = () => {
   // click event to show staff
+  document.querySelector('#home-link').addEventListener('click', () => {
+    showHome();
+  });
   document.querySelector('#staff-link').addEventListener('click', () => {
     getStaff().then((staffArray) => createStaff(staffArray));
   });
