@@ -18,6 +18,9 @@ const navBar = () => {
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link pl-5 pr-5" style="color: #58a6ff; font-size: 30px; text-shadow: 1px 1px black;" id="home-link" href="#">Home</a>
+    </li>
      <li class="nav-item active">
         <a class="nav-link pl-5 pr-5" style="color: #58a6ff; font-size: 30px; text-shadow: 1px 1px black;" id="staff-link" href="#">Staff</a>
      </li>
