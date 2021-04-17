@@ -1,87 +1,59 @@
 # Whalom Park Dashboard
-
-### Product Owner
-Your PO is assigned as an approver and feedback for your application. They are not there to guide you through code. If you have code related needs, submit a completed issue ticket.
-
-PO: **Aja**
-
-## Description
-Whalom Park, based in Lunenburg, Massachusetts, is the 13th oldest amusement park in the United States.  Well, at least it was the 13th oldest park until it was closed in 2000.  Luckily, somebody started a successful GoFundMe in order to bring back the park, which would make it now the world's 11th oldest amusement park!  Part of the funding for re-opening Whalom Park will go to a team of developers in order to create an admin dashboard that will allow the new owners of the park to easily manage the vendors, the rides, and staff, as well as keeping track of the visitors.  Congratulations, you are that team!  Bringing this park back to life is going to be "A Whale of a Good Time" (That is the official slogan)
+Whalom Park, based in Lunenburg, Massachusetts, is the 13th oldest amusement park in the United States.  Well, at least it was the 13th oldest park until it was closed in 2000.  Luckily, somebody started a successful GoFundMe in order to bring back the park, which would make it now the world's 11th oldest amusement park!  Part of the funding for re-opening Whalom Park will go to a team of developers in order to create an admin dashboard that will allow the new owners of the park to easily manage the vendors, the rides, and staff, as well as keeping track of the visitors. Bringing this park back to life is going to be "A Whale of a Good Time" (That is the official slogan)
 
 ### Deploy: https://e14-whalom-park.netlify.app/
 
 ### Entity Relationship Diagram: https://dbdiagram.io/d/606d049decb54e10c33f0196
 
 ### Flow Chart: https://docs.google.com/presentation/d/1N4PUf0xh2PICwQ-KIUwIwhojXXq5QU3_ZF_BoFS-cOE/edit?usp=sharing
-### Requirements:
-* Complete Planning
-    * Make sure to break down tickets into milestones, include an ERD and a Workflow Diagram of how you will tackle each part of the application
-    * NOTE: This includes setting up a development branch that branches off of the main branch to test your team's code and for review by the PO
-* Set up deployment EARLY and deploy with every milestone so that the PO can see the web interface
-* Add Webpack to the Project
-* Authenticate to perform any actions (CUD)
-* Staff
-* Vendors
-* Rides
-* Visitors
-* Consistent Theme
-**Stretch goal:** Events
 
-## User Stories
+
+## Features
+### Week 1
 #### Authentication
-* As a user, when I am unauthenticated I should be able to see the dashboard (Read only).
-* As a user, when I am authenticated I should be able to perform all actions on the dashboard (full CRUD).
-* As a user, I should be able to login via google.
-* As a user, I should be able to logout
+* When unauthenticated you are able to see the dashboard, and not manipulate data.
+* When authenticated you are able to perform all actions on the dashboard.
+* Able to login via Google.
 
 #### Staff
-* As a user, I should be able to view all Staff.
-* As a user, I should be able to add Staff.
-* As a user, I should be able to edit Staff.
-* As a user, I should be able to remove Staff.
+When logged in, you are able to:
+* See all Staff.
+* Add Staff.
+* Edit Staff.
+* Remove Staff.
 
 #### Vendors
-* As a user, I should be able to view all active Vendors.
-* As a user, I should be able to create a Vendor.
-* As a user, I should be able to edit a Vendor.
-* As a user, I should be able to delete a Vendor.
+When logged in, you are able to:
+* View all active and inactive Vendors.
+* Add a Vendor.
+* Edit a Vendor.
+* Delete a Vendor.
 
 #### Rides
-* As a user, I should be able to view all the Rides.
-* As a user, I should be able to add a Ride.
-* As a user, I should be able to edit a Ride.
-* As a user, I should be able to delete a Ride.
+When logged in, you are able to:
+* View all the Rides.
+* Add a Ride.
+* Edit a Ride.
+* Delete a Ride.
 
 #### Visitors
-* As a user, I should be able to view all the Visitors.
-* As a user, I should be able to add a Visitor.
-* As a user, I should be able to edit a Visitor.
-* As a user, I should be able to delete a Visitor.
-
-### Stretch Goals
+When logged in, you are able to:
+* View all the Visitors.
+* Add a Visitor.
+* Edit a Visitor.
+* Delete a Visitor.
 #### Events
-* As a user, I should be able to view all the Events.
-* As a user, I should be able to add an Event.
-* As a user, I should be able to edit an Event.
-* As a user, I should be able to delete an Event.
+When logged in, you are able to:
+* View all the Events.
+* Add an Event.
+* Edit an Event.
+* Delete an Event.
 
-## Week 2
+### Week 2
 
-### Week 2 Requirements:
-* Assign Staff to Vendors and Rides
-* Charge Visitors for Vendors and Rides
-* Visitor Tracking System
-* Stretch goal: Charting
-
-### Week 2 User Stories
-
-#### Assigning Staff
-* As a user, I should be able to assign a Staff member to a Ride
-* As a user, I should be able to assign a Staff member to a Vendor
-* For a ride to be open, it needs two staff members assigned
-* There should be two levels of Staff, (Senior and Intern)
-
-#### Charging visitors
+When logged in, you are able to:
+* Assign staff to be either Senior or Intern level. They cannot be both.
+* Click a button so time passes and visitors buy something at a random ride or vendor.
 * As a user, there should be a button that loops over the visitors and makes them buy something
 * A visitor will choose a random ride or vendor
 * As a user, I should be able to charge Visitors when they use a Ride or Vendor
